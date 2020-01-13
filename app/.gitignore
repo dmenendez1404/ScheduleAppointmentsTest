@@ -7,6 +7,12 @@
 
 # testing
 /coverage
+.idea
+*.iml
+.vscode
+*.swp
+*.swo
+*.snap
 
 # production
 /build
