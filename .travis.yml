@@ -1,0 +1,14 @@
+image: node:lts-slim
+
+stages:
+  - test
+  - migrate
+  - build
+  - deploy
+
+include:
+  - local: 'Backend/.gitlab-ci.yml'
+  - local: 'Frontend/.gitlab-ci.yml'
+
+
+
