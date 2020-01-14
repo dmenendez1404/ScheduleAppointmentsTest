@@ -19,7 +19,7 @@
     "start": "react-scripts start",
     "build": "react-scripts build",
     "test": "react-scripts test ./src/.*.spec.* -u",
-    "test:coverage": "react-scripts test ./src/.*.spec.* -u --coverage --watchAll=false",
+    "test:coverage": "react-scripts test ./src/.*.spec.* -u --coverage --watchAll",
     "test:coverage:ci": "react-scripts test ./src/.*.spec.* -u --ci --coverage --silent --watchAll=false",
     "eject": "react-scripts eject",
     "cypress:run": " cypress run",
