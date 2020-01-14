@@ -16,7 +16,7 @@ const App: React.FC = () => {
           target="_blank"
           rel="noopener noreferrer"
         >
-          Deplot it to Firebase
+          Deplot it on Firebase
         </a>
       </header>
     </div>

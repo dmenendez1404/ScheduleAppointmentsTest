@@ -4,6 +4,6 @@ import App from '../App';
 
 test('renders learn react link', () => {
   const { getByText } = render(<App />);
-  const linkElement = getByText(/Deploy by Travis/i);
+  const linkElement = getByText(/ Deplot it on Firebase/i);
   expect(linkElement).toBeInTheDocument();
 });
