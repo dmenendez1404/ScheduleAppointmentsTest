@@ -9,10 +9,11 @@ jobs:
     - cd app/
     - npm install
     - npm run test:coverage:ci
+  - stage: deploy
     cache:
+      bundler: true
       directories:
       - app/node_modules
-  - stage: deploy
     script:
     - cd app/
     - npm install -g firebase-tools
