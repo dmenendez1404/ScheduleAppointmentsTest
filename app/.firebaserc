@@ -1,5 +1,6 @@
 {
   "projects": {
-    "default": "schedule-appointments-test-qa"
+    "production": "schedule-appointments-test",
+    "qa": "schedule-appointments-test-qa"
   }
 }
