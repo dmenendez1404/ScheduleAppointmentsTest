@@ -1,0 +1,7 @@
+{
+  "projects": {
+    "production": "schedule-appointments-test",
+    "qa": "schedule-appointments-test-qa",
+    "default": "schedule-appointments-test-qa"
+  }
+}
