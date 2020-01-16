@@ -28,7 +28,7 @@ yarn-error.log*
 chrome-user-data
 *.sublime-project
 *.sublime-workspace
-.idea
+.idea/
 *.iml
 .vscode
 *.swp

@@ -31,5 +31,6 @@ jobs:
         branch: master
 stages:
 - name: test
+  if: type = push
 - name: deploy_qa
 - name: deploy_production
