@@ -31,6 +31,8 @@ jobs:
         branch: master
 stages:
 - name: test
-  if: type = push
+  if: type = pull_request
 - name: deploy_qa
+  if: type = pull_request && type = merge
 - name: deploy_production
+  if: type = pull_request && type = merge
