@@ -14,7 +14,7 @@ jobs:
     - cd app/
     - npm install
     - npm install -g firebase-tools
-    - npm run build
+    - npm run build_qa
     - firebase use --token $FIREBASE_TOKEN qa
     - firebase deploy -m "Pipeline $CI_PIPELINE_ID, build $CI_BUILD_ID" --non-interactive --token $FIREBASE_TOKEN
     on:
@@ -24,12 +24,15 @@ jobs:
       - cd app/
       - npm install
       - npm install -g firebase-tools
-      - npm run build
+      - npm run build_prod
       - firebase use --token $FIREBASE_TOKEN production
       - firebase deploy -m "Pipeline $CI_PIPELINE_ID, build $CI_BUILD_ID" --non-interactive --token $FIREBASE_TOKEN
       on:
         branch: master
 stages:
 - name: test
+  if: type = pull_request
 - name: deploy_qa
+  if: type = pull_request && type = merge
 - name: deploy_production
+  if: type = pull_request && type = merge
