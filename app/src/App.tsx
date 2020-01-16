@@ -16,7 +16,7 @@ const App: React.FC = () => {
           target="_blank"
           rel="noopener noreferrer"
         >
-          Learn React
+            Hello from {process.env.REACT_APP_ENV}
         </a>
       </header>
     </div>
