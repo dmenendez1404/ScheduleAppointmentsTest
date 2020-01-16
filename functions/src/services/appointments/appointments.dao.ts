@@ -1,5 +1,6 @@
 import {Appointment} from "./appointments.model";
 import {ObjectID} from "mongodb";
+import moment = require("moment");
 
 export class AppointmentsDao {
     private dbConnection: any;
@@ -52,6 +53,8 @@ export class AppointmentsDao {
         try {
             const db = client.db("schedule_appointments");
             const newAppointment: Appointment = JSON.parse(body);
+            newAppointment.createdAt = moment.now()
+            newAppointment.updatedAt = moment.now()
             let response = {};
             await db.collection('appointment').insertOne(newAppointment).then((res: any) => {
                 if (!res.ops)
@@ -85,18 +88,19 @@ export class AppointmentsDao {
         try {
             const db = client.db("schedule_appointments");
             const appointment: Appointment = JSON.parse(body);
+            appointment.updatedAt = moment.now()
             let response = {};
-            await db.collection('appointment').updateOne({_id: new ObjectID(id)}, {$set: appointment}, {upsert: false}).then((res: any) => {
+            await db.collection('appointment').findOneAndUpdate({_id: new ObjectID(id)}, {$set: appointment}, {upsert: false}).then((res: any) => {
                 console.log(res)
-                if (!res.ops)
+                if (!res.value)
                     response = {
                         message: `The appointment doesn't exist`,
                         statusCode: 406
                     };
                 else {
                     response = {
-                        data: res.ops[0],
-                        message: `Appointment updated successful`,
+                        data: res.value,
+                        message: `Appointment saved successful`,
                         statusCode: 200
                     }
                 }

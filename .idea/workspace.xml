@@ -2,30 +2,13 @@
 <project version="4">
   <component name="ChangeListManager">
     <list default="true" id="68129fb5-6b26-4e82-975b-61624d62af24" name="Default Changelist" comment="">
-      <change afterPath="$PROJECT_DIR$/functions/src/services/appointments/appointments.controller.ts" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/functions/src/services/appointments/appointments.dao.ts" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/functions/src/services/appointments/appointments.model.ts" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/functions/src/services/appointments/index.ts" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/functions/src/services/commands/commands.models.ts" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/functions/src/services/commands/commands.service.ts" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/functions/src/services/commands/errors.ts" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/functions/src/services/commands/index.ts" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/functions/src/services/core/base/function-base.ts" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/functions/src/services/core/base/index.ts" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/functions/src/services/core/index.ts" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/functions/src/services/core/utils/asyncFn.ts" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/functions/src/services/core/utils/index.ts" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/functions/src/services/core/utils/paginate.ts" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/functions/src/services/registry.dao.ts" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/functions/src/services/registry.functions.ts" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/functions/src/services/shared/database_name.ts" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/functions/src/services/shared/entity.model.ts" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/functions/package-lock.json" beforeDir="false" afterPath="$PROJECT_DIR$/functions/package-lock.json" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/functions/package.json" beforeDir="false" afterPath="$PROJECT_DIR$/functions/package.json" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/functions/src/index.ts" beforeDir="false" afterPath="$PROJECT_DIR$/functions/src/index.ts" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/functions/tslint.json" beforeDir="false" afterPath="$PROJECT_DIR$/functions/tslint.json" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/package-lock.json" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/functions/src/services/appointments/appointments.dao.ts" beforeDir="false" afterPath="$PROJECT_DIR$/functions/src/services/appointments/appointments.dao.ts" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/functions/src/services/appointments/appointments.model.ts" beforeDir="false" afterPath="$PROJECT_DIR$/functions/src/services/appointments/appointments.model.ts" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/functions/src/services/shared/database_name.ts" beforeDir="false" afterPath="$PROJECT_DIR$/functions/src/services/shared/database_name.ts" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/functions/src/services/shared/entity.model.ts" beforeDir="false" afterPath="$PROJECT_DIR$/functions/src/services/shared/entity.model.ts" afterDir="false" />
     </list>
     <ignored path="$PROJECT_DIR$/.tmp/" />
     <ignored path="$PROJECT_DIR$/temp/" />
@@ -61,7 +44,7 @@
           <entry key="json" value="15" />
           <entry key="log" value="2" />
           <entry key="md" value="1" />
-          <entry key="ts" value="50" />
+          <entry key="ts" value="53" />
           <entry key="tsx" value="9" />
           <entry key="yml" value="3" />
         </counts>
@@ -73,7 +56,7 @@
           <entry key="JSON" value="15" />
           <entry key="JavaScript" value="7" />
           <entry key="PLAIN_TEXT" value="17" />
-          <entry key="TypeScript" value="50" />
+          <entry key="TypeScript" value="53" />
           <entry key="TypeScript JSX" value="9" />
           <entry key="YAML" value="3" />
         </counts>
@@ -86,7 +69,7 @@
           <entry key="js" value="4" />
           <entry key="json" value="71" />
           <entry key="md" value="89" />
-          <entry key="ts" value="4209" />
+          <entry key="ts" value="4290" />
           <entry key="tsx" value="184" />
           <entry key="yml" value="149" />
         </counts>
@@ -96,7 +79,7 @@
           <entry key="JSON" value="71" />
           <entry key="JavaScript" value="4" />
           <entry key="PLAIN_TEXT" value="143" />
-          <entry key="TypeScript" value="4209" />
+          <entry key="TypeScript" value="4290" />
           <entry key="TypeScript JSX" value="184" />
           <entry key="YAML" value="149" />
         </counts>
@@ -111,15 +94,6 @@
   <component name="FileEditorManager">
     <leaf SIDE_TABS_SIZE_LIMIT_KEY="300">
       <file pinned="false" current-in-tab="false">
-        <entry file="file://$PROJECT_DIR$/functions/src/services/registry.functions.ts">
-          <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="-16">
-              <caret line="7" selection-start-line="7" selection-end-line="7" />
-            </state>
-          </provider>
-        </entry>
-      </file>
-      <file pinned="false" current-in-tab="false">
         <entry file="file://$PROJECT_DIR$/functions/src/services/appointments/index.ts">
           <provider selected="true" editor-type-id="text-editor">
             <state relative-caret-position="-16">
@@ -127,15 +101,6 @@
               <folding>
                 <element signature="e#0#48#0" expanded="true" />
               </folding>
-            </state>
-          </provider>
-        </entry>
-      </file>
-      <file pinned="false" current-in-tab="false">
-        <entry file="file://$PROJECT_DIR$/functions/node_modules/@types/mongodb/index.d.ts">
-          <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="-7">
-              <caret line="316" column="4" selection-start-line="316" selection-start-column="4" selection-end-line="316" selection-end-column="4" />
             </state>
           </provider>
         </entry>
@@ -155,13 +120,18 @@
       <file pinned="false" current-in-tab="true">
         <entry file="file://$PROJECT_DIR$/functions/src/services/appointments/appointments.dao.ts">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="324">
-              <caret line="130" column="41" selection-start-line="130" selection-start-column="41" selection-end-line="130" selection-end-column="41" />
+            <state relative-caret-position="-316">
+              <caret line="66" column="41" lean-forward="true" selection-start-line="66" selection-start-column="41" selection-end-line="66" selection-end-column="41" />
               <folding>
                 <element signature="e#0#49#0" expanded="true" />
               </folding>
             </state>
           </provider>
+        </entry>
+      </file>
+      <file pinned="false" current-in-tab="false">
+        <entry file="file://$PROJECT_DIR$/functions/src/services/shared/database_name.ts">
+          <provider selected="true" editor-type-id="text-editor" />
         </entry>
       </file>
       <file pinned="false" current-in-tab="false">
@@ -176,8 +146,17 @@
       <file pinned="false" current-in-tab="false">
         <entry file="file://$PROJECT_DIR$/functions/src/services/appointments/appointments.model.ts">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="-16">
-              <caret line="6" column="7" selection-start-line="6" selection-start-column="7" selection-end-line="6" selection-end-column="7" />
+            <state relative-caret-position="80">
+              <caret line="4" column="8" selection-start-line="4" selection-start-column="8" selection-end-line="4" selection-end-column="8" />
+            </state>
+          </provider>
+        </entry>
+      </file>
+      <file pinned="false" current-in-tab="false">
+        <entry file="file://$PROJECT_DIR$/functions/src/services/shared/entity.model.ts">
+          <provider selected="true" editor-type-id="text-editor">
+            <state>
+              <caret column="17" selection-start-column="17" selection-end-column="17" />
             </state>
           </provider>
         </entry>
@@ -207,7 +186,7 @@
         <entry file="file://$PROJECT_DIR$/functions/package.json">
           <provider selected="true" editor-type-id="text-editor">
             <state relative-caret-position="-7">
-              <caret line="21" column="23" selection-start-line="21" selection-start-column="23" selection-end-line="21" selection-end-column="23" />
+              <caret line="22" column="23" selection-start-line="22" selection-start-column="23" selection-end-line="22" selection-end-column="23" />
             </state>
           </provider>
         </entry>
@@ -265,7 +244,6 @@
         <option value="$PROJECT_DIR$/functions/src/services/contacts/contacts.modal.ts" />
         <option value="$PROJECT_DIR$/functions/src/services/contacts/contacts.service.ts" />
         <option value="$PROJECT_DIR$/functions/src/services/contacts/contacts.dao.ts" />
-        <option value="$PROJECT_DIR$/functions/src/services/shared/database_name.ts" />
         <option value="$PROJECT_DIR$/functions/src/services/contacts/index.ts" />
         <option value="$PROJECT_DIR$/functions/src/services/contacts/contacts.model.ts" />
         <option value="$PROJECT_DIR$/functions/src/services/contacts/contacts.controller.ts" />
@@ -279,10 +257,12 @@
         <option value="$PROJECT_DIR$/functions/src/services/appointments/appointments.service.ts" />
         <option value="$PROJECT_DIR$/functions/src/services/core/utils/asyncFn.ts" />
         <option value="$PROJECT_DIR$/functions/src/services/registry.dao.ts" />
-        <option value="$PROJECT_DIR$/functions/src/services/appointments/appointments.model.ts" />
         <option value="$PROJECT_DIR$/functions/package.json" />
         <option value="$PROJECT_DIR$/functions/src/services/appointments/appointments.controller.ts" />
         <option value="$PROJECT_DIR$/functions/src/services/appointments/index.ts" />
+        <option value="$PROJECT_DIR$/functions/src/services/shared/database_name.ts" />
+        <option value="$PROJECT_DIR$/functions/src/services/shared/entity.model.ts" />
+        <option value="$PROJECT_DIR$/functions/src/services/appointments/appointments.model.ts" />
         <option value="$PROJECT_DIR$/functions/src/services/appointments/appointments.dao.ts" />
       </list>
     </option>
@@ -325,28 +305,7 @@
             <path>
               <item name="ScheduleAppointmentsTest" type="b2602c69:ProjectViewProjectNode" />
               <item name="ScheduleAppointmentsTest" type="462c0819:PsiDirectoryNode" />
-              <item name="functions" type="462c0819:PsiDirectoryNode" />
-            </path>
-            <path>
-              <item name="ScheduleAppointmentsTest" type="b2602c69:ProjectViewProjectNode" />
-              <item name="ScheduleAppointmentsTest" type="462c0819:PsiDirectoryNode" />
-              <item name="functions" type="462c0819:PsiDirectoryNode" />
-              <item name="src" type="462c0819:PsiDirectoryNode" />
-            </path>
-            <path>
-              <item name="ScheduleAppointmentsTest" type="b2602c69:ProjectViewProjectNode" />
-              <item name="ScheduleAppointmentsTest" type="462c0819:PsiDirectoryNode" />
-              <item name="functions" type="462c0819:PsiDirectoryNode" />
-              <item name="src" type="462c0819:PsiDirectoryNode" />
-              <item name="services" type="462c0819:PsiDirectoryNode" />
-            </path>
-            <path>
-              <item name="ScheduleAppointmentsTest" type="b2602c69:ProjectViewProjectNode" />
-              <item name="ScheduleAppointmentsTest" type="462c0819:PsiDirectoryNode" />
-              <item name="functions" type="462c0819:PsiDirectoryNode" />
-              <item name="src" type="462c0819:PsiDirectoryNode" />
-              <item name="services" type="462c0819:PsiDirectoryNode" />
-              <item name="appointments" type="462c0819:PsiDirectoryNode" />
+              <item name="app" type="462c0819:PsiDirectoryNode" />
             </path>
           </expand>
           <select />
@@ -410,18 +369,18 @@
       <workItem from="1579052705326" duration="346000" />
       <workItem from="1579053140960" duration="4780000" />
       <workItem from="1579096802790" duration="3570000" />
-      <workItem from="1579113402749" duration="42796000" />
+      <workItem from="1579113402749" duration="45227000" />
     </task>
     <servers />
   </component>
   <component name="TimeTrackingManager">
-    <option name="totallyTimeSpent" value="72339000" />
+    <option name="totallyTimeSpent" value="74770000" />
   </component>
   <component name="ToolWindowManager">
     <frame x="1912" y="-8" width="1936" height="1056" extended-state="6" />
     <editor active="true" />
     <layout>
-      <window_info content_ui="combo" id="Project" order="0" visible="true" weight="0.1548999" />
+      <window_info active="true" content_ui="combo" id="Project" order="0" visible="true" weight="0.1548999" />
       <window_info id="Structure" order="1" side_tool="true" weight="0.25" />
       <window_info id="Favorites" order="2" side_tool="true" />
       <window_info anchor="bottom" id="Message" order="0" />
@@ -434,7 +393,7 @@
       <window_info anchor="bottom" id="Docker" order="7" show_stripe_button="false" />
       <window_info anchor="bottom" id="Version Control" order="8" show_stripe_button="false" />
       <window_info anchor="bottom" id="TypeScript" order="9" />
-      <window_info active="true" anchor="bottom" id="Terminal" order="10" visible="true" weight="0.45878524" />
+      <window_info anchor="bottom" id="Terminal" order="10" visible="true" weight="0.45878524" />
       <window_info anchor="bottom" id="Event Log" order="11" side_tool="true" />
       <window_info anchor="bottom" id="Regex Tester" order="12" />
       <window_info anchor="right" id="Commander" internal_type="SLIDING" order="0" type="SLIDING" weight="0.4" />
@@ -587,22 +546,8 @@
     <entry file="file://$PROJECT_DIR$/functions/src/services/core/base/index.ts">
       <provider selected="true" editor-type-id="text-editor" />
     </entry>
-    <entry file="file://$PROJECT_DIR$/functions/src/services/shared/database_name.ts">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="20">
-          <caret line="1" column="35" lean-forward="true" selection-start-line="1" selection-start-column="35" selection-end-line="1" selection-end-column="35" />
-        </state>
-      </provider>
-    </entry>
     <entry file="file://$PROJECT_DIR$/functions/src/services/core/index.ts">
       <provider selected="true" editor-type-id="text-editor" />
-    </entry>
-    <entry file="file://$PROJECT_DIR$/functions/src/services/shared/entity.model.ts">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="120">
-          <caret line="6" column="17" selection-start-line="6" selection-start-column="17" selection-end-line="6" selection-end-column="17" />
-        </state>
-      </provider>
     </entry>
     <entry file="file://$PROJECT_DIR$/functions/src/services/core/utils/index.ts">
       <provider selected="true" editor-type-id="text-editor" />
@@ -695,7 +640,7 @@
     <entry file="file://$PROJECT_DIR$/functions/package.json">
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="-7">
-          <caret line="21" column="23" selection-start-line="21" selection-start-column="23" selection-end-line="21" selection-end-column="23" />
+          <caret line="22" column="23" selection-start-line="22" selection-start-column="23" selection-end-line="22" selection-end-column="23" />
         </state>
       </provider>
     </entry>
@@ -726,13 +671,6 @@
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/functions/src/services/appointments/appointments.model.ts">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="-16">
-          <caret line="6" column="7" selection-start-line="6" selection-start-column="7" selection-end-line="6" selection-end-column="7" />
-        </state>
-      </provider>
-    </entry>
     <entry file="file://$PROJECT_DIR$/functions/src/services/appointments/appointments.controller.ts">
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="-16">
@@ -743,10 +681,27 @@
         </state>
       </provider>
     </entry>
+    <entry file="file://$PROJECT_DIR$/functions/src/services/shared/database_name.ts">
+      <provider selected="true" editor-type-id="text-editor" />
+    </entry>
+    <entry file="file://$PROJECT_DIR$/functions/src/services/shared/entity.model.ts">
+      <provider selected="true" editor-type-id="text-editor">
+        <state>
+          <caret column="17" selection-start-column="17" selection-end-column="17" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/functions/src/services/appointments/appointments.model.ts">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="80">
+          <caret line="4" column="8" selection-start-line="4" selection-start-column="8" selection-end-line="4" selection-end-column="8" />
+        </state>
+      </provider>
+    </entry>
     <entry file="file://$PROJECT_DIR$/functions/src/services/appointments/appointments.dao.ts">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="324">
-          <caret line="130" column="41" selection-start-line="130" selection-start-column="41" selection-end-line="130" selection-end-column="41" />
+        <state relative-caret-position="-316">
+          <caret line="66" column="41" lean-forward="true" selection-start-line="66" selection-start-column="41" selection-end-line="66" selection-end-column="41" />
           <folding>
             <element signature="e#0#49#0" expanded="true" />
           </folding>
