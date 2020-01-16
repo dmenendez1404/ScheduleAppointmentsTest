@@ -3,12 +3,9 @@
   <component name="ChangeListManager">
     <list default="true" id="68129fb5-6b26-4e82-975b-61624d62af24" name="Default Changelist" comment="">
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/functions/package-lock.json" beforeDir="false" afterPath="$PROJECT_DIR$/functions/package-lock.json" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/functions/package.json" beforeDir="false" afterPath="$PROJECT_DIR$/functions/package.json" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/functions/src/services/appointments/appointments.dao.ts" beforeDir="false" afterPath="$PROJECT_DIR$/functions/src/services/appointments/appointments.dao.ts" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/functions/src/services/appointments/appointments.model.ts" beforeDir="false" afterPath="$PROJECT_DIR$/functions/src/services/appointments/appointments.model.ts" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/functions/src/services/shared/database_name.ts" beforeDir="false" afterPath="$PROJECT_DIR$/functions/src/services/shared/database_name.ts" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/functions/src/services/shared/entity.model.ts" beforeDir="false" afterPath="$PROJECT_DIR$/functions/src/services/shared/entity.model.ts" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/functions/src/services/core/utils/index.ts" beforeDir="false" afterPath="$PROJECT_DIR$/functions/src/services/core/utils/index.ts" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/functions/src/services/core/utils/paginate.ts" beforeDir="false" afterPath="$PROJECT_DIR$/functions/src/services/core/utils/format-response.ts" afterDir="false" />
     </list>
     <ignored path="$PROJECT_DIR$/.tmp/" />
     <ignored path="$PROJECT_DIR$/temp/" />
@@ -44,7 +41,7 @@
           <entry key="json" value="15" />
           <entry key="log" value="2" />
           <entry key="md" value="1" />
-          <entry key="ts" value="53" />
+          <entry key="ts" value="59" />
           <entry key="tsx" value="9" />
           <entry key="yml" value="3" />
         </counts>
@@ -56,7 +53,7 @@
           <entry key="JSON" value="15" />
           <entry key="JavaScript" value="7" />
           <entry key="PLAIN_TEXT" value="17" />
-          <entry key="TypeScript" value="53" />
+          <entry key="TypeScript" value="59" />
           <entry key="TypeScript JSX" value="9" />
           <entry key="YAML" value="3" />
         </counts>
@@ -69,7 +66,7 @@
           <entry key="js" value="4" />
           <entry key="json" value="71" />
           <entry key="md" value="89" />
-          <entry key="ts" value="4290" />
+          <entry key="ts" value="4480" />
           <entry key="tsx" value="184" />
           <entry key="yml" value="149" />
         </counts>
@@ -79,7 +76,7 @@
           <entry key="JSON" value="71" />
           <entry key="JavaScript" value="4" />
           <entry key="PLAIN_TEXT" value="143" />
-          <entry key="TypeScript" value="4290" />
+          <entry key="TypeScript" value="4480" />
           <entry key="TypeScript JSX" value="184" />
           <entry key="YAML" value="149" />
         </counts>
@@ -93,35 +90,11 @@
   </component>
   <component name="FileEditorManager">
     <leaf SIDE_TABS_SIZE_LIMIT_KEY="300">
-      <file pinned="false" current-in-tab="false">
-        <entry file="file://$PROJECT_DIR$/functions/src/services/appointments/index.ts">
-          <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="-16">
-              <caret line="15" column="119" selection-start-line="15" selection-start-column="119" selection-end-line="15" selection-end-column="119" />
-              <folding>
-                <element signature="e#0#48#0" expanded="true" />
-              </folding>
-            </state>
-          </provider>
-        </entry>
-      </file>
-      <file pinned="false" current-in-tab="false">
-        <entry file="file://$PROJECT_DIR$/functions/src/services/registry.dao.ts">
-          <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="-16">
-              <caret line="6" column="137" selection-start-line="6" selection-start-column="25" selection-end-line="6" selection-end-column="137" />
-              <folding>
-                <element signature="e#0#37#0" expanded="true" />
-              </folding>
-            </state>
-          </provider>
-        </entry>
-      </file>
       <file pinned="false" current-in-tab="true">
         <entry file="file://$PROJECT_DIR$/functions/src/services/appointments/appointments.dao.ts">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="-316">
-              <caret line="66" column="41" lean-forward="true" selection-start-line="66" selection-start-column="41" selection-end-line="66" selection-end-column="41" />
+            <state relative-caret-position="260">
+              <caret line="121" column="19" lean-forward="true" selection-start-line="121" selection-start-column="19" selection-end-line="121" selection-end-column="19" />
               <folding>
                 <element signature="e#0#49#0" expanded="true" />
               </folding>
@@ -130,15 +103,52 @@
         </entry>
       </file>
       <file pinned="false" current-in-tab="false">
+        <entry file="file://$PROJECT_DIR$/functions/src/services/core/base/function-base.ts">
+          <provider selected="true" editor-type-id="text-editor" />
+        </entry>
+      </file>
+      <file pinned="false" current-in-tab="false">
+        <entry file="file://$PROJECT_DIR$/functions/src/services/core/base/index.ts">
+          <provider selected="true" editor-type-id="text-editor" />
+        </entry>
+      </file>
+      <file pinned="false" current-in-tab="false">
         <entry file="file://$PROJECT_DIR$/functions/src/services/shared/database_name.ts">
           <provider selected="true" editor-type-id="text-editor" />
         </entry>
       </file>
       <file pinned="false" current-in-tab="false">
-        <entry file="file://$PROJECT_DIR$/functions/node_modules/@types/mongoose/index.d.ts">
+        <entry file="file://$PROJECT_DIR$/functions/src/services/registry.dao.ts">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="-7">
-              <caret line="3203" column="51" selection-start-line="3203" selection-start-column="51" selection-end-line="3203" selection-end-column="51" />
+            <state relative-caret-position="180">
+              <caret line="10" selection-start-line="10" selection-end-line="10" />
+            </state>
+          </provider>
+        </entry>
+      </file>
+      <file pinned="false" current-in-tab="false">
+        <entry file="file://$PROJECT_DIR$/functions/src/services/core/utils/format-response.ts">
+          <provider selected="true" editor-type-id="text-editor">
+            <state>
+              <caret column="6" selection-start-column="6" selection-end-column="6" />
+            </state>
+          </provider>
+        </entry>
+      </file>
+      <file pinned="false" current-in-tab="false">
+        <entry file="file://$PROJECT_DIR$/functions/src/services/core/utils/index.ts">
+          <provider selected="true" editor-type-id="text-editor">
+            <state relative-caret-position="20">
+              <caret line="1" column="33" selection-start-line="1" selection-start-column="19" selection-end-line="1" selection-end-column="33" />
+            </state>
+          </provider>
+        </entry>
+      </file>
+      <file pinned="false" current-in-tab="false">
+        <entry file="file://$PROJECT_DIR$/functions/src/services/core/utils/asyncFn.ts">
+          <provider selected="true" editor-type-id="text-editor">
+            <state relative-caret-position="40">
+              <caret line="2" column="22" selection-start-line="2" selection-start-column="22" selection-end-line="2" selection-end-column="22" />
             </state>
           </provider>
         </entry>
@@ -157,36 +167,6 @@
           <provider selected="true" editor-type-id="text-editor">
             <state>
               <caret column="17" selection-start-column="17" selection-end-column="17" />
-            </state>
-          </provider>
-        </entry>
-      </file>
-      <file pinned="false" current-in-tab="false">
-        <entry file="file://$PROJECT_DIR$/functions/src/services/core/utils/asyncFn.ts">
-          <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="-16">
-              <caret line="2" column="22" selection-start-line="2" selection-start-column="22" selection-end-line="2" selection-end-column="22" />
-            </state>
-          </provider>
-        </entry>
-      </file>
-      <file pinned="false" current-in-tab="false">
-        <entry file="file://$PROJECT_DIR$/functions/src/services/appointments/appointments.controller.ts">
-          <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="-16">
-              <caret line="25" column="58" selection-start-line="25" selection-start-column="58" selection-end-line="25" selection-end-column="58" />
-              <folding>
-                <element signature="e#0#51#0" expanded="true" />
-              </folding>
-            </state>
-          </provider>
-        </entry>
-      </file>
-      <file pinned="false" current-in-tab="false">
-        <entry file="file://$PROJECT_DIR$/functions/package.json">
-          <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="-7">
-              <caret line="22" column="23" selection-start-line="22" selection-start-column="23" selection-end-line="22" selection-end-column="23" />
             </state>
           </provider>
         </entry>
@@ -256,13 +236,15 @@
         <option value="$PROJECT_DIR$/functions/src/services/registry.service.ts" />
         <option value="$PROJECT_DIR$/functions/src/services/appointments/appointments.service.ts" />
         <option value="$PROJECT_DIR$/functions/src/services/core/utils/asyncFn.ts" />
-        <option value="$PROJECT_DIR$/functions/src/services/registry.dao.ts" />
         <option value="$PROJECT_DIR$/functions/package.json" />
         <option value="$PROJECT_DIR$/functions/src/services/appointments/appointments.controller.ts" />
         <option value="$PROJECT_DIR$/functions/src/services/appointments/index.ts" />
         <option value="$PROJECT_DIR$/functions/src/services/shared/database_name.ts" />
         <option value="$PROJECT_DIR$/functions/src/services/shared/entity.model.ts" />
         <option value="$PROJECT_DIR$/functions/src/services/appointments/appointments.model.ts" />
+        <option value="$PROJECT_DIR$/functions/src/services/core/utils/format-response.ts" />
+        <option value="$PROJECT_DIR$/functions/src/services/core/utils/index.ts" />
+        <option value="$PROJECT_DIR$/functions/src/services/registry.dao.ts" />
         <option value="$PROJECT_DIR$/functions/src/services/appointments/appointments.dao.ts" />
       </list>
     </option>
@@ -305,7 +287,28 @@
             <path>
               <item name="ScheduleAppointmentsTest" type="b2602c69:ProjectViewProjectNode" />
               <item name="ScheduleAppointmentsTest" type="462c0819:PsiDirectoryNode" />
-              <item name="app" type="462c0819:PsiDirectoryNode" />
+              <item name="functions" type="462c0819:PsiDirectoryNode" />
+            </path>
+            <path>
+              <item name="ScheduleAppointmentsTest" type="b2602c69:ProjectViewProjectNode" />
+              <item name="ScheduleAppointmentsTest" type="462c0819:PsiDirectoryNode" />
+              <item name="functions" type="462c0819:PsiDirectoryNode" />
+              <item name="src" type="462c0819:PsiDirectoryNode" />
+            </path>
+            <path>
+              <item name="ScheduleAppointmentsTest" type="b2602c69:ProjectViewProjectNode" />
+              <item name="ScheduleAppointmentsTest" type="462c0819:PsiDirectoryNode" />
+              <item name="functions" type="462c0819:PsiDirectoryNode" />
+              <item name="src" type="462c0819:PsiDirectoryNode" />
+              <item name="services" type="462c0819:PsiDirectoryNode" />
+            </path>
+            <path>
+              <item name="ScheduleAppointmentsTest" type="b2602c69:ProjectViewProjectNode" />
+              <item name="ScheduleAppointmentsTest" type="462c0819:PsiDirectoryNode" />
+              <item name="functions" type="462c0819:PsiDirectoryNode" />
+              <item name="src" type="462c0819:PsiDirectoryNode" />
+              <item name="services" type="462c0819:PsiDirectoryNode" />
+              <item name="appointments" type="462c0819:PsiDirectoryNode" />
             </path>
           </expand>
           <select />
@@ -369,18 +372,18 @@
       <workItem from="1579052705326" duration="346000" />
       <workItem from="1579053140960" duration="4780000" />
       <workItem from="1579096802790" duration="3570000" />
-      <workItem from="1579113402749" duration="45227000" />
+      <workItem from="1579113402749" duration="46231000" />
     </task>
     <servers />
   </component>
   <component name="TimeTrackingManager">
-    <option name="totallyTimeSpent" value="74770000" />
+    <option name="totallyTimeSpent" value="75774000" />
   </component>
   <component name="ToolWindowManager">
     <frame x="1912" y="-8" width="1936" height="1056" extended-state="6" />
     <editor active="true" />
     <layout>
-      <window_info active="true" content_ui="combo" id="Project" order="0" visible="true" weight="0.1548999" />
+      <window_info content_ui="combo" id="Project" order="0" visible="true" weight="0.1548999" />
       <window_info id="Structure" order="1" side_tool="true" weight="0.25" />
       <window_info id="Favorites" order="2" side_tool="true" />
       <window_info anchor="bottom" id="Message" order="0" />
@@ -393,7 +396,7 @@
       <window_info anchor="bottom" id="Docker" order="7" show_stripe_button="false" />
       <window_info anchor="bottom" id="Version Control" order="8" show_stripe_button="false" />
       <window_info anchor="bottom" id="TypeScript" order="9" />
-      <window_info anchor="bottom" id="Terminal" order="10" visible="true" weight="0.45878524" />
+      <window_info active="true" anchor="bottom" id="Terminal" order="10" visible="true" weight="0.45878524" />
       <window_info anchor="bottom" id="Event Log" order="11" side_tool="true" />
       <window_info anchor="bottom" id="Regex Tester" order="12" />
       <window_info anchor="right" id="Commander" internal_type="SLIDING" order="0" type="SLIDING" weight="0.4" />
@@ -443,13 +446,6 @@
     </watches-manager>
   </component>
   <component name="editorHistoryManager">
-    <entry file="file://$PROJECT_DIR$/app/tsconfig.json">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="160">
-          <caret line="22" column="9" selection-start-line="22" selection-start-column="9" selection-end-line="22" selection-end-column="9" />
-        </state>
-      </provider>
-    </entry>
     <entry file="file://$PROJECT_DIR$/app/node_modules/typescript/lib/lib.dom.d.ts">
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="110">
@@ -543,29 +539,13 @@
     </entry>
     <entry file="file://$PROJECT_DIR$/functions/configs/qa/firebaseConfig.json" />
     <entry file="file://$PROJECT_DIR$/functions/src/services/topUpAccounts.dao.ts" />
-    <entry file="file://$PROJECT_DIR$/functions/src/services/core/base/index.ts">
-      <provider selected="true" editor-type-id="text-editor" />
-    </entry>
     <entry file="file://$PROJECT_DIR$/functions/src/services/core/index.ts">
-      <provider selected="true" editor-type-id="text-editor" />
-    </entry>
-    <entry file="file://$PROJECT_DIR$/functions/src/services/core/utils/index.ts">
       <provider selected="true" editor-type-id="text-editor" />
     </entry>
     <entry file="file://$PROJECT_DIR$/functions/tslint.json">
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="2480">
           <caret line="124" selection-start-line="124" selection-end-line="124" />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/functions/src/services/core/utils/paginate.ts">
-      <provider selected="true" editor-type-id="text-editor">
-        <state>
-          <caret selection-start-column="2" selection-end-line="14" selection-end-column="5" />
-          <folding>
-            <element signature="n#!!doc" expanded="true" />
-          </folding>
         </state>
       </provider>
     </entry>
@@ -630,27 +610,10 @@
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/functions/src/services/core/utils/asyncFn.ts">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="-16">
-          <caret line="2" column="22" selection-start-line="2" selection-start-column="22" selection-end-line="2" selection-end-column="22" />
-        </state>
-      </provider>
-    </entry>
     <entry file="file://$PROJECT_DIR$/functions/package.json">
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="-7">
           <caret line="22" column="23" selection-start-line="22" selection-start-column="23" selection-end-line="22" selection-end-column="23" />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/functions/src/services/registry.dao.ts">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="-16">
-          <caret line="6" column="137" selection-start-line="6" selection-start-column="25" selection-end-line="6" selection-end-column="137" />
-          <folding>
-            <element signature="e#0#37#0" expanded="true" />
-          </folding>
         </state>
       </provider>
     </entry>
@@ -698,10 +661,44 @@
         </state>
       </provider>
     </entry>
+    <entry file="file://$PROJECT_DIR$/functions/src/services/core/base/function-base.ts">
+      <provider selected="true" editor-type-id="text-editor" />
+    </entry>
+    <entry file="file://$PROJECT_DIR$/functions/src/services/core/base/index.ts">
+      <provider selected="true" editor-type-id="text-editor" />
+    </entry>
+    <entry file="file://$PROJECT_DIR$/functions/src/services/core/utils/asyncFn.ts">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="40">
+          <caret line="2" column="22" selection-start-line="2" selection-start-column="22" selection-end-line="2" selection-end-column="22" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/functions/src/services/core/utils/index.ts">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="20">
+          <caret line="1" column="33" selection-start-line="1" selection-start-column="19" selection-end-line="1" selection-end-column="33" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/functions/src/services/core/utils/format-response.ts">
+      <provider selected="true" editor-type-id="text-editor">
+        <state>
+          <caret column="6" selection-start-column="6" selection-end-column="6" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/functions/src/services/registry.dao.ts">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="180">
+          <caret line="10" selection-start-line="10" selection-end-line="10" />
+        </state>
+      </provider>
+    </entry>
     <entry file="file://$PROJECT_DIR$/functions/src/services/appointments/appointments.dao.ts">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="-316">
-          <caret line="66" column="41" lean-forward="true" selection-start-line="66" selection-start-column="41" selection-end-line="66" selection-end-column="41" />
+        <state relative-caret-position="260">
+          <caret line="121" column="19" lean-forward="true" selection-start-line="121" selection-start-column="19" selection-end-line="121" selection-end-column="19" />
           <folding>
             <element signature="e#0#49#0" expanded="true" />
           </folding>
