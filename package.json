@@ -4,7 +4,8 @@
   "description": "This repository is a Fullstack Test",
   "main": "index.js",
   "scripts": {
-    "test": "echo \"Error: no test specified\" && exit 1"
+    "test": "echo \"Error: no test specified\" && exit 1",
+    "commit": "npx git-cz"
   },
   "repository": {
     "type": "git",
@@ -17,6 +18,12 @@
   },
   "homepage": "https://github.com/dmenendez1404/ScheduleAppointmentsTest#readme",
   "devDependencies": {
+    "cz-conventional-changelog": "^3.0.2",
     "semantic-release": "^16.0.2"
+  },
+  "config": {
+    "commitizen": {
+      "path": "./node_modules/cz-conventional-changelog"
+    }
   }
 }
