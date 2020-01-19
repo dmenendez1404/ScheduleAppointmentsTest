@@ -58,7 +58,8 @@
       "!**/index.{ts,tsx}",
       "!**/theme.ts",
       "!**/*.model.ts",
-      "src/**/*.{ts,tsx}"
+      "src/**/*.{ts,tsx}",
+      "!src/react-app-env.d.ts"
     ]
   },
   "browserslist": {

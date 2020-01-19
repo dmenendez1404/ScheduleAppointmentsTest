@@ -4,7 +4,6 @@ import './App.css';
 import actions from './store/actions/app';
 import {useDispatch, useSelector} from "react-redux";
 import {Appointment} from "./plugins/appointments/model/appointments.model";
-//import {Appointment} from "./plugins/appointments/model/appointments.model";
 
 
 const App: React.FC = () => {
