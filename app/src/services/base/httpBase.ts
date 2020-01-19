@@ -1,7 +1,7 @@
 import Http from "./http";
 
 export default class HttpBase {
-    private http: any;
+    http: any;
 
     constructor(route: string) {
         this.http = new Http(route);

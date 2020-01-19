@@ -1,0 +1,33 @@
+{
+  "name": "scheduleappointmentstest",
+  "version": "0.0.0-development",
+  "description": "This repository is a Fullstack Test",
+  "main": "index.js",
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1",
+    "commit": "npx git-cz",
+    "semantic-release": "semantic-release"
+  },
+  "repository": {
+    "type": "git",
+    "url": "https://github.com/dmenendez1404/ScheduleAppointmentsTest.git"
+  },
+  "author": "Daniel Menendez",
+  "license": "ISC",
+  "bugs": {
+    "url": "https://github.com/dmenendez1404/ScheduleAppointmentsTest/issues"
+  },
+  "homepage": "https://github.com/dmenendez1404/ScheduleAppointmentsTest#readme",
+  "devDependencies": {
+    "cz-conventional-changelog": "^3.0.2",
+    "semantic-release": "^16.0.2"
+  },
+  "config": {
+    "commitizen": {
+      "path": "./node_modules/cz-conventional-changelog"
+    }
+  },
+  "publishConfig": {
+    "access": "restricted"
+  }
+}
