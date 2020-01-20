@@ -1,11 +1,14 @@
 {
   "compilerOptions": {
-    "target": "es5",
     "lib": [
-      "dom",
-      "dom.iterable",
-      "esnext"
+      "es6",
+      "dom"
     ],
+    "noImplicitAny": false,
+    "noImplicitThis": false,
+    "noUnusedParameters": false,
+    "strictNullChecks": false,
+    "target": "es5",
     "allowJs": true,
     "skipLibCheck": true,
     "esModuleInterop": true,

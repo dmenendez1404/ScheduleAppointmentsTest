@@ -156,7 +156,7 @@ context('Network Requests', () => {
     cy.route('GET', 'comments/*').as('getComment')
 
     // we have code that gets a comment when
-    // the button is clicked in scripts.js
+    // the buttonStories is clicked in scripts.js
     cy.get('.network-btn').click()
 
     // https://on.cypress.io/wait
@@ -166,7 +166,7 @@ context('Network Requests', () => {
     cy.route('POST', '/comments').as('postComment')
 
     // we have code that posts a comment when
-    // the button is clicked in scripts.js
+    // the buttonStories is clicked in scripts.js
     cy.get('.network-post').click()
     cy.wait('@postComment').should((xhr) => {
       expect(xhr.requestBody).to.include('email')
@@ -184,7 +184,7 @@ context('Network Requests', () => {
     }).as('putComment')
 
     // we have code that puts a comment when
-    // the button is clicked in scripts.js
+    // the buttonStories is clicked in scripts.js
     cy.get('.network-put').click()
 
     cy.wait('@putComment')
