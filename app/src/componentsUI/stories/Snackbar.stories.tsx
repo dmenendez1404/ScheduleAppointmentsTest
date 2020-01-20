@@ -1,6 +1,4 @@
 import React from 'react';
-import { action } from '@storybook/addon-actions';
-import {Button} from "../CustomButtons";
 import {Snackbar} from "../Snackbar";
 
 export default {

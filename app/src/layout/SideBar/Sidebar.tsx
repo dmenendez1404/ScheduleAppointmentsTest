@@ -9,7 +9,6 @@ import Collapse from '@material-ui/core/Collapse'
 import {makeStyles} from '@material-ui/core/styles';
 import globalTheme from "../../theme";
 import Typography from "@material-ui/core/Typography/Typography";
-import Toolbar from "@material-ui/core/Toolbar/Toolbar";
 
 const Sidebar = (props) => {
 
@@ -94,7 +93,7 @@ const drawerWidth = 240;
 
 const useStyles = makeStyles(theme => ({
     title:{
-        margin: '5%'
+        margin: '5%',
     },
     toolbarIcon: {
         display: 'flex',
