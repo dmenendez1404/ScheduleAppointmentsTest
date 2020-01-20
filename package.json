@@ -6,7 +6,9 @@
   "scripts": {
     "test": "echo \"Error: no test specified\" && exit 1",
     "commit": "npx git-cz",
-    "semantic-release": "semantic-release"
+    "semantic-release": "semantic-release",
+    "start-frontend": "cd app && npm start",
+    "start-functions": "cd functions && npm run serve"
   },
   "repository": {
     "type": "git",

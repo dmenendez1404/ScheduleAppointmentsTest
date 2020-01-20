@@ -1,40 +1,30 @@
-import React, {useCallback, useEffect, useRef} from 'react';
-import logo from './logo.svg';
+import React from 'react';
 import './App.css';
-import actions from './store/actions/app';
-import {useDispatch, useSelector} from "react-redux";
-import {Appointment} from "./plugins/appointments/model/appointments.model";
+import {LayoutApp} from "./layout";
+import { Switch } from 'react-router-dom';
+import {GuestRoute} from "./layout/routes";
+import routes from "./routes";
+import {AppointmentsContainer} from "./plugins/appointments";
 
+const App: React.FC = (props: any) => {
 
-const App: React.FC = () => {
-
-    const DATA: Appointment[] = useSelector((state: any) => state.app.APPOINTMENTS)
-    const mounted = useRef(false);
-    const dispatch = useDispatch();
-    const loadAppointments = useCallback(() => dispatch(actions.loadAppointments()), [dispatch]);
-
-    useEffect(() => {
-        console.log(DATA)
-        if (!mounted.current) {
-            loadAppointments();
-        }
-        mounted.current = true;
-    }, [loadAppointments, DATA]);
+    const { location, history } = props;
 
     return (
-        <div className="App">
-            <header className="App-header">
-                <img src={logo} className="App-logo" alt="logo"/>
-                <p>
-                    List of Appointments
-                </p>
-                {DATA && DATA.map((appointment: Appointment) =>
-                    <>
-                        <p>{appointment.title}</p>
-                    </>
+        <LayoutApp location={location}>
+            <Switch>
+                <GuestRoute location={location} history={history} exact path="/" Component={AppointmentsContainer} />
+                {routes.map((prop: any, key: any) =>
+                    <prop.routetype
+                        path={prop.path}
+                        Component={(props) => <prop.routeComponent {...props} />}
+                        key={key}
+                        location={location}
+                        history={history}
+                    />
                 )}
-            </header>
-        </div>
+            </Switch>
+        </LayoutApp>
     );
 }
 

@@ -8,10 +8,10 @@ import {BrowserRouter, Route} from 'react-router-dom';
 import {MuiThemeProvider} from "@material-ui/core";
 import globalTheme from "./theme";
 import {Store} from './store';
-import createBrowserHistory from "history/createBrowserHistory";
+import * as History from "history";
 
 
-const history = createBrowserHistory();
+const history = History.createBrowserHistory();
 const store = Store;
 
 ReactDOM.render(
