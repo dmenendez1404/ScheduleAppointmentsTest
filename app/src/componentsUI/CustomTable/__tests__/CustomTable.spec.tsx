@@ -1,7 +1,6 @@
 import React from 'react';
 import { mount } from 'enzyme';
 import { CustomTable } from '..';
-import MuiTheme from '../customTheme';
 import { MuiThemeProvider } from '@material-ui/core';
 import globalTheme from '../../../theme';
 import { VpnKey } from '@material-ui/icons';
