@@ -32,7 +32,7 @@ context('Aliasing', () => {
     cy.route('GET', 'comments/*').as('getComment')
 
     // we have code that gets a comment when
-    // the button is clicked in scripts.js
+    // the buttonStories is clicked in scripts.js
     cy.get('.network-btn').click()
 
     // https://on.cypress.io/wait

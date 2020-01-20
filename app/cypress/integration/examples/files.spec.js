@@ -30,7 +30,7 @@ context('Files', () => {
     cy.route('GET', 'comments/*', '@comment').as('getComment')
 
     // we have code that gets a comment when
-    // the button is clicked in scripts.js
+    // the buttonStories is clicked in scripts.js
     cy.get('.fixture-btn').click()
 
     cy.wait('@getComment').its('responseBody')
@@ -41,7 +41,7 @@ context('Files', () => {
     cy.route('GET', 'comments/*', 'fixture:example.json').as('getComment')
 
     // we have code that gets a comment when
-    // the button is clicked in scripts.js
+    // the buttonStories is clicked in scripts.js
     cy.get('.fixture-btn').click()
 
     cy.wait('@getComment').its('responseBody')
@@ -53,7 +53,7 @@ context('Files', () => {
     cy.route('GET', 'comments/*', 'fx:example').as('getComment')
 
     // we have code that gets a comment when
-    // the button is clicked in scripts.js
+    // the buttonStories is clicked in scripts.js
     cy.get('.fixture-btn').click()
 
     cy.wait('@getComment').its('responseBody')

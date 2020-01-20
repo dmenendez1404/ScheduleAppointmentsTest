@@ -24,7 +24,7 @@ context('Waiting', () => {
     cy.route('GET', 'comments/*').as('getComment')
 
     // we have code that gets a comment when
-    // the button is clicked in scripts.js
+    // the buttonStories is clicked in scripts.js
     cy.get('.network-btn').click()
 
     // wait for GET comments/1

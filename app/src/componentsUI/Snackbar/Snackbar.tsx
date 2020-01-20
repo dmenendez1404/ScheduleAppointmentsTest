@@ -13,7 +13,7 @@ import snackbarContentStyle from "../../assets/jss/material-dashboard-react/comp
 function Snackbar({ ...props }) {
   const {
     classes,
-    message,
+    message='default message',
     color,
     close,
     icon,

@@ -18,9 +18,10 @@ function CustomSelect({...props}) {
         id,
         labelProps,
         options,
-        keyValue,
-        keyText,
+        keyValue='value',
+        keyText='label',
         onChange,
+        variant = 'outlined',
     } = props;
 
     let {control = getEmptyControl()} = props;
@@ -30,6 +31,7 @@ function CustomSelect({...props}) {
         <FormControl
             error={control.error}
             fullWidth={true}
+            variant={variant}
         >
             {labelText !== undefined ? (
                 <InputLabel
@@ -67,6 +69,7 @@ CustomSelect.propTypes = {
     labelProps: PropTypes.object,
     id: PropTypes.string.isRequired,
     control: PropTypes.object.isRequired,
+    variant: PropTypes.oneOf(['standard', 'outlined', 'filled']),
 };
 
 export default withStyles(customInputStyle)(CustomSelect);

@@ -16,7 +16,8 @@ const CustomTextArea = ({...props}) => {
         id,
         rows,
         placeholder,
-        onChange
+        onChange,
+        variant
     } = props;
     let {control = getEmptyControl()} = props;
 
@@ -26,6 +27,7 @@ const CustomTextArea = ({...props}) => {
             error={control.error}
             fullWidth={true}
             className={classes.formControl}
+            variant={variant}
         >
             <TextField
                 id={id}
@@ -53,7 +55,8 @@ CustomTextArea.propTypes = {
     rows: PropTypes.number,
     placeholder: PropTypes.string,
     control: PropTypes.object.isRequired,
-    onChange: PropTypes.func.isRequired
+    onChange: PropTypes.func.isRequired,
+    variant: PropTypes.oneOf(['standard', 'outlined', 'filled']),
 };
 
 export default withStyles(customInputStyle)(CustomTextArea);

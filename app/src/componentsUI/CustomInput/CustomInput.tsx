@@ -1,14 +1,11 @@
 import React from "react";
-import classNames from "classnames";
 import PropTypes from "prop-types";
 // @material-ui/core components
 import withStyles from "@material-ui/core/styles/withStyles";
 import FormControl from "@material-ui/core/FormControl";
-import InputLabel from "@material-ui/core/InputLabel";
-import Input from "@material-ui/core/Input";
+import {FormHelperText, TextField} from "@material-ui/core";
 // core components
 import customInputStyle from "../../assets/jss/material-dashboard-react/components/customInputStyle";
-import {FormHelperText} from "@material-ui/core";
 import {isValidControl} from "../../utils/FieldValidators";
 import {handleControlChange, getEmptyControl} from "../../utils/index";
 
@@ -25,17 +22,6 @@ const CustomInput = ({...props}) => {
     } = props;
     let {control = getEmptyControl()} = props;
 
-    const labelClasses = classNames({
-        [" " + classes.labelRootError]: control.error,
-    });
-    const underlineClasses = classNames({
-        [classes.underlineError]: control.error,
-        [classes.underline]: true
-    });
-    const marginTop = classNames({
-        [classes.marginTop]: labelText === undefined
-    });
-
     control = isValidControl(control);
 
     return (
@@ -45,24 +31,12 @@ const CustomInput = ({...props}) => {
             className={classes.formControl}
             variant={variant}
         >
-            {labelText !== undefined ? (
-                <InputLabel
-                    className={classes.labelRoot + labelClasses}
-                    htmlFor={id}
-                >
-                    {labelText}
-                </InputLabel>
-            ) : null}
-            <Input
-                classes={{
-                    root: marginTop,
-                    disabled: classes.disabled,
-                    underline: underlineClasses
-                }}
-
+            <TextField
                 id={id}
                 type={type}
                 value={control.value}
+                variant={variant}
+                label={labelText}
                 onChange={(e) => handleControlChange(e, control, onChange)}
             />
             {control.error ? (

@@ -2,7 +2,7 @@ import {isValidControl} from './FieldValidators'
 
 export const getEmptyControl = () => {
     return {
-        value: '', mensaje: '', validators: [], error: false
+        value: '', message: '', validators: [], error: false
     }
 }
 export const handleControlChange = (event: any, control: any, callback: any) => {

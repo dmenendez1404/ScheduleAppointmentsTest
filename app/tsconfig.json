@@ -6,6 +6,7 @@
     ],
     "noImplicitAny": false,
     "noImplicitThis": false,
+    "noUnusedParameters": false,
     "strictNullChecks": false,
     "target": "es5",
     "allowJs": true,

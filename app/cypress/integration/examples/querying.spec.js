@@ -15,7 +15,7 @@ context('Querying', () => {
 
     cy.get('.query-btn').should('contain', 'Button')
 
-    cy.get('#querying .well>button:first').should('contain', 'Button')
+    cy.get('#querying .well>buttonStories:first').should('contain', 'Button')
     //              ↲
     // Use CSS selectors just like jQuery
 
@@ -60,7 +60,7 @@ context('Querying', () => {
       .contains('ul', 'oranges')
       .should('have.class', 'query-list')
 
-    cy.get('.query-button')
+    cy.get('.query-buttonStories')
       .contains('Save Form')
       .should('have.class', 'btn')
   })
@@ -102,7 +102,7 @@ context('Querying', () => {
 
       // Slightly better. Uses an ID but also ensures the element
       // has an ARIA role attribute
-      cy.get('#main[role=button]').click()
+      cy.get('#main[role=buttonStories]').click()
 
       // Much better. But still coupled to text content that may change.
       cy.contains('Submit').click()
