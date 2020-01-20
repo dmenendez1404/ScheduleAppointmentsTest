@@ -4,6 +4,7 @@ import GuestRoute from '../GuestRoute';
 import { Provider } from 'react-redux';
 import { Store } from '../../../store';
 import { BrowserRouter as Router } from 'react-router-dom';
+import Sidebar from "../../SideBar/Sidebar";
 
 describe('GuestRoute', () => {
 
@@ -14,7 +15,7 @@ describe('GuestRoute', () => {
         const component = mount(
             <Provider store={Store}>
                 <Router>
-                    {/*<GuestRoute {...props}/>*/}
+                    <GuestRoute {...props}  location={{pathname: '/'}} />
                 </Router>
             </Provider>
         );

@@ -1,9 +1,9 @@
 import { Entity } from '../shared/entity.model'
 
 export interface Appointment extends Entity {
-    startTime: Date,
-    endTime: Date
+    start: Date,
+    end: Date
     title: string,
-
+    color: string,
 }
 

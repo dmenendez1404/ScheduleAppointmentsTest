@@ -1,34 +1,15 @@
-import React from "react";
-import Calendar from "react-big-calendar";
-import moment from "moment";
-import withDragAndDrop from "react-big-calendar/lib/addons/dragAndDrop";
+import React from 'react';
+import { mount } from 'enzyme';
+import CustomCalendar from "../Calendar";
 
-import "react-big-calendar/lib/addons/dragAndDrop/styles.css";
-import "react-big-calendar/lib/css/react-big-calendar.css";
+describe('Calendar', () => {
+    const props = {
 
-const CustomCalendar = (props) => {
+    }
+    it('should render Custom Buttom with specifics props', () => {
+        const component = mount(<CustomCalendar {...props} />);
+        expect(component).toMatchSnapshot();
 
-    const localizer = Calendar.momentLocalizer(moment);
-    const DnDCalendar = withDragAndDrop(Calendar);
+    });
 
-    return (
-        <div className="App">
-            <DnDCalendar
-                defaultDate={new Date()}
-                defaultView="week"
-                events={props.events}
-                localizer={localizer}
-                onSelectEvent={props.onSelectEvent}
-                onEventDrop={props.onEventDrop}
-                onEventResize={props.onEventResize}
-                onSelectSlot={props.onSelectSlot}
-                resizable
-                views={['week', 'agenda']}
-                selectable={'ignoreEvents'}
-                style={{height: "100vh"}}
-            />
-        </div>
-    );
-}
-
-export default CustomCalendar;
+});
