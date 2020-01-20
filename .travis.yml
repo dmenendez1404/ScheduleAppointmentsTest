@@ -9,6 +9,9 @@ jobs:
     - cd app/
     - npm install
     - npm run test:coverage:ci
+    cache:
+      directories:
+      - app/node_modules
   - stage: deploy_qa
     install: skip
     script:
@@ -17,6 +20,8 @@ jobs:
     - npm run build_qa
     - firebase use --token $FIREBASE_TOKEN qa
     - firebase deploy -m "Pipeline $CI_PIPELINE_ID, build $CI_BUILD_ID" --non-interactive --token $FIREBASE_TOKEN
+    on:
+      branch: develop
   - stage: deploy_prod
       install: skip
       script:
@@ -25,18 +30,14 @@ jobs:
       - npm run build_prod
       - firebase use --token $FIREBASE_TOKEN production
       - firebase deploy -m "Pipeline $CI_PIPELINE_ID, build $CI_BUILD_ID" --non-interactive --token $FIREBASE_TOKEN
-    - stage: release
-        node_js: lts/*
-        deploy:
-          provider: script
-          skip_cleanup: true
-          script:
-          - npx semantic-release
+      on:
+        branch: master
+
 stages:
 - name: test
   if: type = push
 - name: release
 - name: deploy_qa
     if: branch = develop
-- name: deploy_production
+- name: deploy_prod
   if: branch = master
