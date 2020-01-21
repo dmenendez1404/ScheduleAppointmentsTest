@@ -15,7 +15,6 @@ const Sidebar = (props) => {
     const classes = useStyles(globalTheme);
     const menuList = [
         {label: "Schedule", Icon: 'calendar.svg', url: "/", level: 0},
-        {label: "Users", Icon: 'user.svg', url: "/", level: 0},
     ];
 
     return (

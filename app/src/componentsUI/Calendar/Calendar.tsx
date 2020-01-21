@@ -11,6 +11,15 @@ const CustomCalendar = (props) => {
     const localizer = Calendar.momentLocalizer(moment);
     const DnDCalendar = withDragAndDrop(Calendar);
 
+    const handleColor = (event, start, end, isSelected) => ({
+        style: {
+            backgroundColor: event.color,
+            borderRadius: '10px',
+            border: '0px',
+            display: 'block'
+        }
+    })
+
     return (
         <div className="App">
             <DnDCalendar
@@ -22,6 +31,7 @@ const CustomCalendar = (props) => {
                 onEventDrop={props.onEventDrop}
                 onEventResize={props.onEventResize}
                 onSelectSlot={props.onSelectSlot}
+                eventPropGetter={handleColor}
                 resizable
                 views={['week', 'agenda']}
                 selectable={'ignoreEvents'}

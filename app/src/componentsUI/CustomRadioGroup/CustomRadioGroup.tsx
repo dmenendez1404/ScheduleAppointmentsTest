@@ -38,7 +38,8 @@ const CustomRadioGroup = ({...props}) => {
                     <FormLabel component="legend" className={classes.labelRoot + labelClasses}>{labelText}</FormLabel>) :
                 null}
             <RadioGroup aria-label={name} name={name} id={id} 
-                        value={control.value} onChange={(e) => { e.target.id= id; handleControlChange(e, control, onChange);}}>
+                        value={control.value}
+                        onChange={(e) => { e.target.id= id; handleControlChange(e, control, onChange);}}>
                 {radios.map((radio:any) =>
                     <FormControlLabel value={radio.value} control={<Radio/>} label={radio.label}/>
                 )}

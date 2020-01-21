@@ -3,41 +3,39 @@ import PropTypes from "prop-types";
 // @material-ui/core components
 import withStyles from "@material-ui/core/styles/withStyles";
 import FormControl from "@material-ui/core/FormControl";
-// core components
 import {FormHelperText} from "@material-ui/core";
-import {handleControlChange, getEmptyControl} from "../../utils/index";
+// core components
 import customInputStyle from "../../assets/jss/material-dashboard-react/components/customInputStyle";
-import TextField from "@material-ui/core/TextField/TextField";
+import {isValidControl} from "../../utils/FieldValidators";
+import {handleControlChange, getEmptyControl} from "../../utils/index";
+import ColorPicker from "material-ui-color-picker";
 
+/*.MuiInputLabel-outlined .MuiInputLabel-outlined*/
 
-const CustomTextArea = ({...props}) => {
+const CustomColorPicker = ({...props}) => {
     const {
-        classes,
+        labelText,
         id,
-        rows,
-        placeholder,
         onChange,
-        variant
+        variant = 'outlined',
     } = props;
     let {control = getEmptyControl()} = props;
 
+    control = isValidControl(control);
 
     return (
         <FormControl
             error={control.error}
             fullWidth={true}
-            className={classes.formControl}
             variant={variant}
         >
-            <TextField
+            <ColorPicker
                 id={id}
-                label={placeholder}
-                multiline
-                rows={rows}
+                defaultValue={'#265985'}
                 value={control.value}
-                onChange={(e) => handleControlChange(e, control, onChange)}
-                className={classes.textField}
-                variant="outlined"
+                variant={variant}
+                label={labelText}
+                onChange={(e) => handleControlChange({target:{value: e, id: id}}, control, onChange)}
             />
             {control.error ? (
                 <FormHelperText id="component-error-text">{control.mensaje}</FormHelperText>
@@ -46,16 +44,14 @@ const CustomTextArea = ({...props}) => {
     );
 }
 
-CustomTextArea.propTypes = {
+CustomColorPicker.propTypes = {
     classes: PropTypes.object.isRequired,
     labelText: PropTypes.node,
     labelProps: PropTypes.object,
     id: PropTypes.string.isRequired,
-    rows: PropTypes.number,
-    placeholder: PropTypes.string,
     control: PropTypes.object.isRequired,
     onChange: PropTypes.func.isRequired,
     variant: PropTypes.oneOf(['standard', 'outlined', 'filled']),
 };
 
-export default withStyles(customInputStyle)(CustomTextArea);
+export default withStyles(customInputStyle)(CustomColorPicker);

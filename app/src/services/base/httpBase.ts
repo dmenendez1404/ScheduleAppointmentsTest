@@ -20,7 +20,7 @@ export default class HttpBase {
     }
 
     update = (data: any) => {
-        return this.http.putRequest('/' + data.id, data);
+        return this.http.putRequest('/' + data._id, data);
     }
 
     delete = (id: string) => {

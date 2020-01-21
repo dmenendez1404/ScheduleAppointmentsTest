@@ -26,7 +26,8 @@ export default class Http {
     }
 
     putRequest(url: string, data: any, config = {}) {
-        return this.apiClient.put(url, data, config);
+        delete data._id
+        return this.apiClient.patch(url, data, config);
     }
 
     deleteRequest(url: string, params: any, config = {}) {

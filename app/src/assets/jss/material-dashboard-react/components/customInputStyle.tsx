@@ -31,12 +31,13 @@ const customInputStyle:any = {
       borderColor: successColor[0]
     }
   },
-  labelRoot: {
+  outlined: {
     ...defaultFont,
     color: grayColor[3] + " !important",
     fontWeight: "400",
     fontSize: "14px",
-    lineHeight: "1.42857"
+    lineHeight: "1.42857",
+    background: "white !important",
   },
   labelRootError: {
     color: dangerColor[0]
