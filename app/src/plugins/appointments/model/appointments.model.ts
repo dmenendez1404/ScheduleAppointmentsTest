@@ -5,5 +5,7 @@ export interface Appointment extends Entity {
     end: Date
     title: string,
     color: string,
+    description: string,
+    clothing: string,
 }
 

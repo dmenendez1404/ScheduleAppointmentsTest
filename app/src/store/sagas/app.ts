@@ -18,3 +18,30 @@ export function* appointmentsFetchData() {
         yield put(actions.requestFails(error));
     }
 }
+
+export function* appointmentsAddData(action) {
+    try {
+        const data = yield call(AppointmentService.save, action.payload);
+        yield put(actions.addAppointmentsSuccess(data));
+    } catch (error) {
+        yield put(actions.requestFails(error));
+    }
+}
+
+export function* appointmentsUpdateData(action) {
+    try {
+        const data = yield call(AppointmentService.update,action.payload);
+        yield put(actions.updateAppointmentsSuccess(data));
+    } catch (error) {
+        yield put(actions.requestFails(error));
+    }
+}
+
+export function* appointmentsDeleteData(action) {
+    try {
+        const data = yield call(AppointmentService.delete,action.payload,);
+        yield put(actions.removeAppointmentsSuccess(data));
+    } catch (error) {
+        yield put(actions.requestFails(error));
+    }
+}
