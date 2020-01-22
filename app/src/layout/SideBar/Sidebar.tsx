@@ -8,9 +8,13 @@ import {Link} from 'react-router-dom';
 import Collapse from '@material-ui/core/Collapse'
 import {makeStyles} from '@material-ui/core/styles';
 import globalTheme from "../../theme";
-import Typography from "@material-ui/core/Typography/Typography";
+import {User} from "../../store/models/user.model";
+import {useSelector} from "react-redux";
+import CustomPicture from "../../componentsUI/CustomPicture/CustomPicture";
 
 const Sidebar = (props) => {
+    const user: User = useSelector((state: any) => state.app.USER)
+
 
     const classes = useStyles(globalTheme);
     const menuList = [
@@ -23,9 +27,10 @@ const Sidebar = (props) => {
                     paper: clsx(classes.drawerPaper, !props.open && classes.drawerPaperClose),
                 }}
                 open={props.open}>
-          <Typography component="h1" variant="h6" noWrap className={classes.title}>
-              Schedule Appointment
-          </Typography>
+            <div style={{height: 150}}>
+                {user && props.open && user.banner_image &&
+                <CustomPicture image={user.banner_image} type={'banner'}></CustomPicture>}
+            </div>
             <h5 className={classes.menuText}>MENU</h5>
             <List className={classes.menuContainer}>
                 <HandleItems items={menuList} location={props.location} open={props.open}/>
@@ -91,7 +96,7 @@ const HandleItems = (props) => {
 const drawerWidth = 240;
 
 const useStyles = makeStyles(theme => ({
-    title:{
+    title: {
         margin: '5%',
     },
     toolbarIcon: {

@@ -1,10 +1,11 @@
 import {Types} from '../actions/app';
 import update from 'immutability-helper';
 import {createReducer} from 'reduxsauce';
+import {User} from "../models/user.model";
 
 
 export const getInitial = () => ({
-    DATA: [],
+    USER: [],
     APPOINTMENTS: [],
     LOADING: false,
     NOTIFIER: {
@@ -29,6 +30,13 @@ const handlers = {
     },
     [Types.CLEAR_STATE]: (state: any, action: any) => {
         return getInitial();
+    },
+    [Types.LOAD_RANDOM_USER_SUCCESS]: (state: any, action: any) => {
+        console.log(action)
+        const user: User = {...action.data.data.user, banner_image: action.data.data.urls};
+        return update(state, {
+            USER: { $set: user },
+        });
     },
     [Types.LOAD_APPOINTMENTS_SUCCESS]: (state: any, action: any) => {
         return update(state, {
