@@ -5,3 +5,4 @@ export * from './CustomSelect/index';
 export * from './Grid/index';
 export * from './Snackbar/index';
 export * from './CustomTable/index';
+export * from './CustomPicture/index';

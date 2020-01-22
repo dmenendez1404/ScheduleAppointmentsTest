@@ -1,4 +1,4 @@
-import React from 'react';
+import React, {useCallback, useEffect, useRef} from 'react';
 import clsx from 'clsx';
 import AppBar from '@material-ui/core/AppBar';
 import Toolbar from '@material-ui/core/Toolbar';
@@ -12,9 +12,28 @@ import Divider from "@material-ui/core/Divider/Divider";
 import NotificationPopover from "./NotificationsPopover";
 import FeaturesPopover from "./FeaturesPopover";
 import globalTheme from "../../theme";
+import {useDispatch, useSelector} from "react-redux";
+import actions from "../../store/actions/app";
+import {User} from "../../store/models/user.model";
+import UserPopover from "./UserPopover";
+import {CustomPicture} from "../../componentsUI/CustomPicture";
 
 
-const HeaderApp = (props:any) => {
+const HeaderApp = (props: any) => {
+
+    const user: User = useSelector((state: any) => state.app.USER)
+
+    const mounted = useRef(false);
+    const dispatch = useDispatch();
+    const loadUser = useCallback(() => dispatch(actions.loadRandomUser()), [dispatch]);
+
+    useEffect(() => {
+        if (!mounted.current) {
+            loadUser();
+        }
+        mounted.current = true;
+    }, [loadUser]);
+
 
     const classes = useStyles(globalTheme);
     const [anchorEl, setAnchorEl] = React.useState(null);
@@ -37,6 +56,20 @@ const HeaderApp = (props:any) => {
         setAnchorFeaturePopover(null);
     };
 
+    const [anchorUserPopover, setAnchorUserPopover] = React.useState(null);
+
+    const handleClickUserPopover = event => {
+        setAnchorUserPopover(event.currentTarget);
+    };
+
+    const handleCloseUserPopover = () => {
+        setAnchorUserPopover(null);
+    };
+
+    const handleOnChangeUser = () => {
+        loadUser();
+    };
+
     return (
         <div>
             <AppBar position="absolute" className={clsx(classes.appBar, props.open && classes.appBarShift)}>
@@ -51,7 +84,9 @@ const HeaderApp = (props:any) => {
                             <MenuIcon/>
                         </IconButton>
                     }
+
                     <Typography component="h1" variant="h6" noWrap className={classes.title}>
+                        Schedule Appointment
                     </Typography>
                     <IconButton onClick={handleClickFeaturePopover}>
                         <AppsIcon/>
@@ -67,11 +102,21 @@ const HeaderApp = (props:any) => {
                                  className={classes.verticalDivider}/>
                     </IconButton>
                     <NotificationPopover anchorEl={anchorEl} closePopover={handleClose}/>
-                    <img src={require('../../assets/img/faces/marc.jpg')} alt={'userPicture'}
-                         className={classes.picturePerfil}/>
+                        {user && user.profile_image ?
+                          <IconButton color="inherit" className={classes.picturePerfil} onClick={handleClickUserPopover}>
+                            <CustomPicture image={user.profile_image} type={'profile'} width={40} heigth={40}/>
+                          </IconButton>:
+                            <img src={require('../../assets/img/unknow.png')} alt={'userPicture'}
+                                 className={classes.picturePerfil}/>
+                        }
+                    <UserPopover anchorEl={anchorUserPopover} user={user} onChangeUser={handleOnChangeUser}
+                                 closePopover={handleCloseUserPopover}/>
                     <span>
                         <Typography component="p" variant="subtitle1"
-                                    noWrap>Robert Dylan
+                                    noWrap>{user ? user.name : 'Username'}
+                    </Typography>
+                        <Typography component="p" variant="subtitle2"
+                                    noWrap>{user ? user.location : ''}
                     </Typography>
                     </span>
                 </Toolbar>
@@ -126,11 +171,12 @@ const useStyles = makeStyles(theme => ({
         border: '1px solid #707070'
     },
     picturePerfil: {
-        width: 39,
-        height: 39,
+        width: 50,
+        height: 50,
         borderRadius: '50%',
         marginLeft: 32,
-        marginRight: 12
+        marginRight: 12,
+        padding: 5
     },
     verticalDivider: {
         position: 'absolute',

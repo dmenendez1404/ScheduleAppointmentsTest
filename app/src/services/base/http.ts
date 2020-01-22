@@ -4,8 +4,14 @@ import {AppActions, Store} from "../../store";
 export default class Http {
     private apiClient: any;
 
-    constructor(route: string) {
-        const url = process.env.REACT_APP_API_ENDPOINT;
+    constructor(route: string, baseUrl?: string) {
+
+        let url;
+        if(!baseUrl)
+            url = process.env.REACT_APP_API_ENDPOINT;
+        else{
+            url = baseUrl
+        }
 
         this.apiClient = axios.create({
             baseURL: `${url}${route}`,

@@ -1,6 +1,8 @@
 import {createActions} from "reduxsauce";
 
 export const {Types, Creators} = createActions({
+        loadRandomUser: [],
+        loadRandomUserSuccess: ['data'],
         loadAppointments: [],
         loadAppointmentsSuccess: ['data'],
         addAppointments: ['payload'],
