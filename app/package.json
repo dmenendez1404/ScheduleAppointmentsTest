@@ -17,6 +17,7 @@
     "@types/react": "^16.9.17",
     "@types/react-dom": "^16.9.4",
     "@types/react-redux": "^7.1.6",
+    "Faker": "^0.7.2",
     "axios": "^0.19.1",
     "classnames": "^2.2.6",
     "connected-react-router": "^6.6.1",
@@ -57,7 +58,7 @@
     "test:coverage": "react-scripts test ./src/.*.spec.* -u --coverage --watchAll",
     "test:coverage:ci": "react-scripts test ./src/.*.spec.* -u --ci --coverage --silent --watchAll=false",
     "eject": "react-scripts eject",
-    "cypress:run": " cypress run",
+    "cypress:run": "cypress run",
     "cypress:open": "cypress open",
     "storybook": "start-storybook"
   },

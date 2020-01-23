@@ -3,7 +3,7 @@
 /// JSON fixture file can be loaded directly using
 // the built-in JavaScript bundler
 // @ts-ignore
-const requiredExample = require('../../fixtures/example')
+const requiredExample = require('../../fixtures/fixtures')
 
 context('Files', () => {
   beforeEach(() => {
@@ -11,7 +11,7 @@ context('Files', () => {
   })
 
   beforeEach(() => {
-    // load example.json fixture file and store
+    // load fixtures.ts fixture file and store
     // in the test context object
     cy.fixture('example.json').as('example')
   })
@@ -38,7 +38,7 @@ context('Files', () => {
       .and('include', 'Using fixtures to represent data')
 
     // you can also just write the fixture in the route
-    cy.route('GET', 'comments/*', 'fixture:example.json').as('getComment')
+    cy.route('GET', 'comments/*', 'fixture:fixtures.ts').as('getComment')
 
     // we have code that gets a comment when
     // the buttonStories is clicked in scripts.js
