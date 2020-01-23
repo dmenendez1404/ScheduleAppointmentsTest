@@ -4,11 +4,15 @@
   "description": "This repository is a Fullstack Test",
   "main": "index.js",
   "scripts": {
-    "test": "echo \"Error: no test specified\" && exit 1",
     "commit": "npx git-cz",
     "semantic-release": "semantic-release",
     "start-frontend": "cd app && npm start",
-    "start-functions": "cd functions && npm run serve"
+    "start-functions": "cd functions && npm run serve",
+    "unit-test-frontend": "cd app && npm run test:coverage",
+    "unit-test-functions": "cd functions && npm run unit-tests",
+    "e2e-test": "cd app && npm run cypress:run",
+    "integration-test-functions": "cd functions && npm run integration-tests",
+    "start-storybooks": "cd app && npm run storybook"
   },
   "repository": {
     "type": "git",

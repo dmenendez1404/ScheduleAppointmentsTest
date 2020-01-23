@@ -32,7 +32,6 @@ const handlers = {
         return getInitial();
     },
     [Types.LOAD_RANDOM_USER_SUCCESS]: (state: any, action: any) => {
-        console.log(action)
         const user: User = {...action.data.data.user, banner_image: action.data.data.urls};
         return update(state, {
             USER: { $set: user },
@@ -52,7 +51,7 @@ const handlers = {
     [Types.ADD_APPOINTMENTS_SUCCESS]: (state: any, action: any) => {
         return update(state, {
             APPOINTMENTS: {
-                $push: [action.data.data.data].map(evt => ({
+                $push: [action.data.data].map(evt => ({
                     ...evt,
                     start: new Date(evt.start),
                     end: new Date(evt.end)
@@ -64,13 +63,12 @@ const handlers = {
         return update(state, {
             APPOINTMENTS: {
                 $set: state.APPOINTMENTS.map((item) => {
-                    if (item._id === action.data.data.data._id){
-                        console.log('entre')
+                    if (item._id === action.data.data._id){
                         return {
-                            ...action.data.data.data,
-                            date: new Date(action.data.data.data.start),
-                            start: new Date(action.data.data.data.start),
-                            end: new Date(action.data.data.data.end)
+                            ...action.data.data,
+                            date: new Date(action.data.data.start),
+                            start: new Date(action.data.data.start),
+                            end: new Date(action.data.data.end)
                         }
                     }
                     return item
@@ -79,8 +77,7 @@ const handlers = {
         });
     },
     [Types.REMOVE_APPOINTMENTS_SUCCESS]: (state: any, action: any) => {
-        const index = state.APPOINTMENTS.findIndex((e: any) => e._id === action.data.data.data._id)
-
+        const index = state.APPOINTMENTS.findIndex((e: any) => e._id === action.data.data._id)
         return update(state, {
             APPOINTMENTS: {$splice: [[index, 1]]},
         });

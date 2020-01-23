@@ -12,7 +12,7 @@ declare global {
     }
 }
 
-export const configureStore = (history: any) => {
+function configureStore(history: any){
     const composeEnhancers = window.__REDUX_DEVTOOLS_EXTENSION_COMPOSE__ || compose;
     const sagaMiddleware = createSagaMiddleware();
     const routingMiddleware = routerMiddleware(history);

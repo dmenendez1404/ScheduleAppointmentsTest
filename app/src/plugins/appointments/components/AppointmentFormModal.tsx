@@ -35,7 +35,6 @@ const AppointmentFormModal = (props) => {
 
     useEffect(() => {
         if (!mounted.current) {
-            console.log(props)
             setForm(loadEmptyForm());
         }
         mounted.current = true;
@@ -43,6 +42,9 @@ const AppointmentFormModal = (props) => {
 
     function saveData(e) {
         const data = FormToJSONHelper(inputs);
+        const {date, start, end} = data;
+        data.start = moment(date).set({hour: start.hour(), minute: start.minute})
+        data.end = moment(date).set({hour: end.hour(), minute: end.minute})
         props.onSubmit(data);
         props.referenceToSwal.close();
     }

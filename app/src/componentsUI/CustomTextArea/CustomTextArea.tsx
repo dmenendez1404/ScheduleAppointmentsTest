@@ -53,7 +53,7 @@ CustomTextArea.propTypes = {
     id: PropTypes.string.isRequired,
     rows: PropTypes.number,
     placeholder: PropTypes.string,
-    control: PropTypes.object.isRequired,
+    control: PropTypes.object,
     onChange: PropTypes.func.isRequired,
     variant: PropTypes.oneOf(['standard', 'outlined', 'filled']),
 };

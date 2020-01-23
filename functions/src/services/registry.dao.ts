@@ -1,10 +1,11 @@
 import {MongoClient} from 'mongodb'
 import {AppointmentsDao} from "./appointments/appointments.dao";
+import CONFIG from "../config";
 
 class RegistryDao {
 
     connectMongoDB = () =>
-        new MongoClient('mongodb+srv://dmenendez:allowToUse@scheduleappointmentstestdb-s3e7r.mongodb.net/test?retryWrites=true&w=majority', {
+        new MongoClient(CONFIG.mongodb, {
             useNewUrlParser: true,
             useUnifiedTopology: true
         })

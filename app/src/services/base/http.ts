@@ -3,7 +3,7 @@ import {AppActions, Store} from "../../store";
 
 export default class Http {
     private apiClient: any;
-
+    private store;
     constructor(route: string, baseUrl?: string) {
 
         let url;
@@ -20,7 +20,9 @@ export default class Http {
                 'Content-Type': 'application/json'
             }
         });
-        //this.initInterceptors();
+        setTimeout(()=> {
+            this.initInterceptors()
+        },1000);
     }
 
     getRequest(url: string, params: any, config = {}) {
@@ -41,7 +43,8 @@ export default class Http {
     }
 
     initInterceptors = () => {
-        const {dispatch} = Store;
+        this.store = Store;
+        const {dispatch} = this.store;
         this.apiClient.interceptors.request.use( (config:any) => {
             dispatch(AppActions.setLoading(true));
             return config;
@@ -51,19 +54,18 @@ export default class Http {
 
         this.apiClient.interceptors.response.use((response: any) => {
             dispatch(AppActions.setLoading(false));
-            if (response.statusCode >= 200 && response.statusCode < 300) {
-                if (!!response.message)
-                    dispatch(AppActions.setNotifier({type: 'success', open: true, message: response.message}))
-                else
-                    dispatch(AppActions.setNotifier({type: 'success', open: false, message: ''}))
-            } else {
-                dispatch(AppActions.setNotifier({type: 'danger', open: true, message: response.message}))
+            if (response.data.statusCode >= 200 && response.data.statusCode < 300) {
+                if (!!response.data.message)
+                    dispatch(AppActions.setNotifier({type: 'success', open: true, message: response.data.message}))
+            } else if(!!response.data.data){
+                dispatch(AppActions.setNotifier({type: 'danger', open: true, message: response.data.message}))
             }
+            if(!response.data.data)
+                return response;
             return response.data;
         }, function (error: any) {
             dispatch(AppActions.setLoading(false));
             dispatch(AppActions.setNotifier({type: 'danger', open: true, message: 'Something went wrong!'}));
-            console.log(error);
             return Promise.reject(error);
         });
     };

@@ -61,7 +61,7 @@ CustomRadioGroup.propTypes = {
     labelProps: PropTypes.object,
     id: PropTypes.string.isRequired,
     name: PropTypes.string.isRequired,
-    control: PropTypes.object.isRequired,
+    control: PropTypes.object,
     onChange: PropTypes.func.isRequired,
     radios: PropTypes.array.isRequired
 };

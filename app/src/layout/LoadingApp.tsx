@@ -16,13 +16,13 @@ const LoadingApp = (props: any) => {
     }
     return (
         <Dialog {...dialogProps}>
-            <CircularProgress {...spinnerProps} />
+            <CircularProgress  {...spinnerProps} />
         </Dialog>
     );
 }
 
 const styles = theme => ({
-    paper: {
+    root: {
         backgroundColor: 'transparent',
         border: 'none',
         boxShadow: 'none',

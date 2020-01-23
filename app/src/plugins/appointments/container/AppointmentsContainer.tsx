@@ -69,7 +69,6 @@ const AppointmentsContainer = (props) => {
     };
 
     const onSelectEvent = (evtprops) => {
-        console.log(evtprops);
         openModal(evtprops);
     };
 
