@@ -47,7 +47,7 @@ CustomTimePicker.propTypes = {
     labelText: PropTypes.node,
     labelProps: PropTypes.object,
     id: PropTypes.string.isRequired,
-    control: PropTypes.object.isRequired,
+    control: PropTypes.object,
     onChange: PropTypes.func.isRequired,
     variant: PropTypes.oneOf(['standard', 'outlined', 'filled']),
 };

@@ -64,7 +64,7 @@ const CustomPicture = ({...props}) => {
 
 CustomPicture.propTypes = {
     type: PropTypes.oneOf(['banner', 'profile']).isRequired,
-    image: PropTypes.string.isRequired,
+    image: PropTypes.object.isRequired,
 };
 
 export default withStyles(customInputStyle)(CustomPicture);

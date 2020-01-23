@@ -13,7 +13,6 @@ import * as History from "history";
 
 const history = History.createBrowserHistory();
 const store = Store;
-
 ReactDOM.render(
     <Provider store={store}>
         <ConnectedRouter history={history}>
