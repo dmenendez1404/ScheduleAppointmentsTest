@@ -39,6 +39,14 @@ npm run start-functions
 
 Visit your [localhost](http://localhost:3000/) and enjoy it
 
+### Running StoryBook
+
+Run StoryBook with this command
+
+```
+npm run start-storybooks
+```
+
 ## Running the tests
 
 Explain how to run the automated tests for this system
