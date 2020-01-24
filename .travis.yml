@@ -41,12 +41,12 @@ jobs:
 
 
 stages:
--name: test
+- name: test
   if: type = pull_request
 - name: deploy_qa
   if: type = push
 #- name: release
 - name: deploy_qa
-    if: branch = dev
+    if: branch = develop
 - name: deploy_prod
   if: branch = master
