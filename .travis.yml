@@ -17,8 +17,8 @@ jobs:
     - npm run start-frontend
     - npm run start-functions
     - npm run e2e-test
+    if: type IN (push, pull_request)
   - stage: deploy_qa
-    if: branch = develop
     script:
     - cd app/
     - npm install -g firebase-tools
@@ -29,8 +29,8 @@ jobs:
     - cd ../functions/
     - npm i
     - npm run deploy
+    if: (branch = develop) AND (NOT (type IN (push, pull_request)))
   - stage: deploy_prod
-      if: branch = master
       script:
       - cd app/
       - npm install -g firebase-tools
@@ -40,3 +40,4 @@ jobs:
       - cd ../functions/
       - npm i
       - npm run deploy
+      if: (branch = master) AND (NOT (type IN (push, pull_request)))
