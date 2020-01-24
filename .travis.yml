@@ -13,6 +13,10 @@ jobs:
     - npm install
     - npm run unit-tests
     - npm run integration-tests
+    - cd ../
+    - npm run start-frontend
+    - npm run start-functions
+    - npm run e2e-test
   - stage: deploy_qa
     script:
     - cd app/
