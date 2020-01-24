@@ -5,6 +5,8 @@ cache: npm
 jobs:
   include:
   - stage: test
+    - name: test
+    if: type = pull_request
     script:
     - cd app/
     - npm install
@@ -18,6 +20,8 @@ jobs:
     - npm run start-functions
     - npm run e2e-test
   - stage: deploy_qa
+    - name: deploy_qa
+    if: branch = develop
     script:
     - cd app/
     - npm install -g firebase-tools
@@ -29,24 +33,14 @@ jobs:
     - npm i
     - npm run deploy
   - stage: deploy_prod
-      script:
-      - cd app/
-      - npm install -g firebase-tools
-      - npm run build_prod
-      - firebase use --token $FIREBASE_TOKEN production
-      - firebase deploy -m "Pipeline $CI_PIPELINE_ID, build $CI_BUILD_ID" --non-interactive --token $FIREBASE_TOKEN
-      - cd ../functions/
-      - npm i
-      - npm run deploy
-
-
-stages:
-- name: test
-  if: type = pull_request
-- name: deploy_qa
-  if: type = push
-#- name: release
-- name: deploy_qa
-    if: branch = develop
-- name: deploy_prod
-  if: branch = master
+    - name: deploy_prod
+    if: branch = master
+    script:
+    - cd app/
+    - npm install -g firebase-tools
+    - npm run build_prod
+    - firebase use --token $FIREBASE_TOKEN production
+    - firebase deploy -m "Pipeline $CI_PIPELINE_ID, build $CI_BUILD_ID" --non-interactive --token $FIREBASE_TOKEN
+    - cd ../functions/
+    - npm i
+    - npm run deploy
