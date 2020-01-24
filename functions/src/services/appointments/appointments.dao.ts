@@ -63,7 +63,7 @@ export class AppointmentsDao {
             });
             return response
         } catch (err) {
-            return console.log(err)
+            return err
         } finally {
             client.close();
         }
