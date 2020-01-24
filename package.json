@@ -6,6 +6,8 @@
   "scripts": {
     "commit": "npx git-cz",
     "semantic-release": "semantic-release",
+    "install-frontend": "cd app && npm i",
+    "install-functions": "cd functions && npm i",
     "start-frontend": "cd app && npm start",
     "start-functions": "cd functions && npm run serve",
     "unit-test-frontend": "cd app && npm run test:coverage",
