@@ -16,6 +16,10 @@ You need to install all dependencies from app folder and functions folder. You c
 ```
 npm run install-frontend
 ```
+later
+```
+npm install -g firebase-tools
+```
 and
 ```
 npm run install-functions
