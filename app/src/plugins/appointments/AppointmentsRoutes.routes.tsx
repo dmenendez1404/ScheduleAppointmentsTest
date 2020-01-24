@@ -4,7 +4,7 @@ import { Switch } from 'react-router-dom';
 import {GuestRoute} from "../../layout/routes";
 import AppointmentsContainer from "./container/AppointmentsContainer";
 
-const AppointmentsRoutes = (props: any) => {
+const AppointmentsRoutesRoutes = (props: any) => {
 
         const { location, history, match } = this.props;
 
@@ -31,4 +31,4 @@ const styles = theme => ({
 });
 
 
-export default withStyles(styles)(AppointmentsRoutes);
+export default withStyles(styles)(AppointmentsRoutesRoutes);

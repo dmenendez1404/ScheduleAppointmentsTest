@@ -1,23 +1,43 @@
-import React from 'react';
+import React, {useCallback, useEffect} from 'react';
 import {withStyles} from '@material-ui/core/styles';
-import {Dialog, CircularProgress} from '@material-ui/core';
+import { CircularProgress} from '@material-ui/core';
+import withReactContent from "sweetalert2-react-content";
+import swal from "sweetalert2";
 
 const LoadingApp = (props: any) => {
 
     const {classes, open} = props;
 
-    const dialogProps = {
-        open,
-        PaperProps: {className: classes.paper}
-    }
+
+    const SwalWithReactContent = withReactContent(swal);
+
+
     const spinnerProps = {
         size: 100,
         className: classes.progress
     }
+
+    const showLoading =  useCallback(() => {
+        SwalWithReactContent.fire({
+            html: (
+                <CircularProgress  {...spinnerProps} />
+            ),
+            showConfirmButton: false,
+            width: '65%',
+            background: 'transparent'
+        });
+    },[SwalWithReactContent, spinnerProps])
+
+    useEffect(()=>{
+        if(open)
+            showLoading()
+        else{
+            SwalWithReactContent.close()
+        }
+    },[open, SwalWithReactContent, showLoading])
+
     return (
-        <Dialog {...dialogProps}>
-            <CircularProgress  {...spinnerProps} />
-        </Dialog>
+            <></>
     );
 }
 

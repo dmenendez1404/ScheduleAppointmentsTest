@@ -72,11 +72,14 @@
     "collectCoverageFrom": [
       "src/**/*.{ts,tsx}",
       "!**/index.{ts,tsx}",
+      "!**/App.{ts,tsx}",
       "!**/theme.ts",
       "!**/*.model.ts",
       "!**/*.stories.tsx",
       "!src/assets/**",
-      "!src/react-app-env.d.ts"
+      "!src/react-app-env.d.ts",
+      "!**/*.{mock,spy}.ts",
+      "!**/*routes.{ts,tsx}"
     ]
   },
   "browserslist": {

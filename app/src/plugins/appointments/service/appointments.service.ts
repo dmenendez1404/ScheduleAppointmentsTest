@@ -1,4 +1,4 @@
-import HttpBase from "../../../services/base/httpBase";
+import {HttpBase} from "../../../services/base/httpBase";
 import SERVICE_ROUTE from "../../../services/base/serviceRoutes";
 
 class AppointmentsService extends HttpBase{
