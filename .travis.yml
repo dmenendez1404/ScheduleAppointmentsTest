@@ -13,10 +13,6 @@ jobs:
     - npm install
     - npm run unit-tests
     - npm run integration-tests
-    - cd ../
-    - npm run start-frontend
-    - npm run start-functions
-    - npm run e2e-test
     if: type = pull_request
   - stage: deploy_qa
     script:
@@ -29,4 +25,4 @@ jobs:
     - cd ../functions/
     - npm i
     - npm run deploy
-    if: branch = develop
+    if: (branch = develop) AND (NOT (type IN (push, pull_request)))
