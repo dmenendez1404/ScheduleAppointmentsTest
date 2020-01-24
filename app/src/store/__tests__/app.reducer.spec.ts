@@ -61,4 +61,57 @@ describe('App reducer', () => {
             })
         ).toEqual(State);
     })
+
+    it('should handle LOAD_RANDOM_USER_SUCCESS', () => {
+        let State = {...getInitial()};
+        State.USER = {banner_image: undefined}
+        const data = {
+            data: {
+                data: {
+                    user: {},
+                    urls: ''
+                }
+            }
+        }
+        expect(
+            reducer(State, {
+                type: '@@ROOT/LOAD_RANDOM_USER_SUCCESS',
+                data
+            })
+        ).toEqual(State);
+    })
+
+    it('should handle UPDATE_APPOINTMENTS_SUCCESS', () => {
+        let State = getInitial();
+        const data = {
+            data: {
+                data: {
+                    data: []
+                }
+            }
+        }
+        expect(
+            reducer(State, {
+                type: '@@ROOT/UPDATE_APPOINTMENTS_SUCCESS',
+                data
+            })
+        ).toEqual(State);
+    })
+
+    it('should handle REMOVE_APPOINTMENTS_SUCCESS', () => {
+        let State = getInitial();
+        const data = {
+            data: {
+                data: {
+                    data: []
+                }
+            }
+        }
+        expect(
+            reducer(State, {
+                type: '@@ROOT/REMOVE_APPOINTMENTS_SUCCESS',
+                data
+            })
+        ).toEqual(State);
+    })
 })

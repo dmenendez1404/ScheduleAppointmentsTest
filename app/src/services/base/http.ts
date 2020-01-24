@@ -1,7 +1,7 @@
 import axios from 'axios';
 import {AppActions, Store} from "../../store";
 
-export default class Http {
+export class Http {
     private apiClient: any;
     private store;
     constructor(route: string, baseUrl?: string) {

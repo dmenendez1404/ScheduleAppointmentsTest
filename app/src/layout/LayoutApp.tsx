@@ -45,6 +45,7 @@ const LayoutApp = (props) => {
             <ContentApp>
                 {children}
             </ContentApp>
+
             <LoadingApp classes={classes} open={loading}/>
 
             <Snackbar

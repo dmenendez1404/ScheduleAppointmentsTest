@@ -1,6 +1,6 @@
-import Http from "./http";
+import {Http} from "./http";
 
-export default class HttpBase {
+export class HttpBase {
     http: any;
 
     constructor(route: string) {
