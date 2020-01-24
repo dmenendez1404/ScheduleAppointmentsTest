@@ -5,7 +5,7 @@ import {User} from "../models/user.model";
 
 
 export const getInitial = () => ({
-    USER: [],
+    USER: {},
     APPOINTMENTS: [],
     LOADING: false,
     NOTIFIER: {

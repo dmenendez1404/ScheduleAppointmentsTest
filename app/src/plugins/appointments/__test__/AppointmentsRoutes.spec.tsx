@@ -11,9 +11,9 @@ describe('AppointmentsRoute', () => {
         const props = {}
         const component = mount(
             <Provider store={Store}>
-                <MemoryRouter>
-                    <AppointmentsRoutes {...props} />
-                </MemoryRouter>
+                    <MemoryRouter>
+                        <AppointmentsRoutes {...props} />
+                    </MemoryRouter>
             </Provider>
         );
         expect(component).toMatchSnapshot();

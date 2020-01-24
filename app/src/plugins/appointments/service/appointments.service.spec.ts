@@ -1,4 +1,4 @@
-import mockAxios from '../../../services/__tests__/__mocks__/axios.mock';
+import mockAxios from '../../../utils/spy/axios.mock';
 import {AppointmentService} from "./";
 
 
