@@ -1,12 +1,14 @@
-import { put, delay, call} from 'redux-saga/effects';
+import {put, delay, call} from 'redux-saga/effects';
 import actions from '../actions/app';
 import {AppointmentService} from "../../plugins/appointments/service";
 import httpUnsplashApi from "../../services/base/httpUnsplashApi";
 
-export function* setNotifierfetchData() {
+export function* setNotifierfetchData(action) {
     try {
-        yield delay(3000);
-        yield put(actions.setNotifier({open: false}));        
+        if (action.data.open) {
+            yield delay(3000);
+            yield put(actions.setNotifier({open: false}));
+        }
     } catch (error) {
     }
 }
@@ -42,7 +44,7 @@ export function* appointmentsAddData(action) {
 
 export function* appointmentsUpdateData(action) {
     try {
-        const data = yield call(AppointmentService.update,action.payload);
+        const data = yield call(AppointmentService.update, action.payload);
         yield put(actions.updateAppointmentsSuccess(data));
     } catch (error) {
         yield put(actions.requestFails(error));
@@ -51,7 +53,7 @@ export function* appointmentsUpdateData(action) {
 
 export function* appointmentsDeleteData(action) {
     try {
-        const data = yield call(AppointmentService.delete,action.payload,);
+        const data = yield call(AppointmentService.delete, action.payload,);
         yield put(actions.removeAppointmentsSuccess(data));
     } catch (error) {
         yield put(actions.requestFails(error));
