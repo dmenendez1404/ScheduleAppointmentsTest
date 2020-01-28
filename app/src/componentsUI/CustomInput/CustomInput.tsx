@@ -34,7 +34,7 @@ const CustomInput = ({...props}) => {
             <TextField
                 id={id}
                 type={type}
-                value={control.value}
+                value={control.value || ''}
                 variant={variant}
                 label={labelText}
                 autoComplete='off'

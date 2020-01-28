@@ -11,6 +11,7 @@ import customInputStyle from "../../assets/jss/material-dashboard-react/componen
 import {isValidControl} from "../../utils/FieldValidators";
 import {handleControlChange, getEmptyControl} from "../../utils/index";
 import DaysUtils from '@date-io/dayjs'
+import moment from "moment";
 
 const CustomTimePicker = ({...props}) => {
     const {
@@ -28,7 +29,7 @@ const CustomTimePicker = ({...props}) => {
             <KeyboardTimePicker
                 id={id}
                 label={labelText}
-                value={control.value}
+                value={control.value || moment()}
                 inputVariant={variant}
                 onChange={(e) => handleControlChange({target:{value: e, id: id}}, control, onChange)}
                 KeyboardButtonProps = {{
