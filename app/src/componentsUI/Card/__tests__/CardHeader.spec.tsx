@@ -10,7 +10,7 @@ describe('CardHeader', () => {
     });
 
     it('should render profile CardHeader', () => {
-        const component = mount(<CardHeader profile={true} />);
+        const component = mount(<CardHeader/>);
         expect(component).toMatchSnapshot();
     });
     it('should render stats CardHeader', () => {

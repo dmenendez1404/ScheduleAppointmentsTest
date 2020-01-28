@@ -37,6 +37,7 @@ const CustomInput = ({...props}) => {
                 value={control.value}
                 variant={variant}
                 label={labelText}
+                autoComplete='off'
                 onChange={(e) => handleControlChange(e, control, onChange)}
             />
             {control.error ? (

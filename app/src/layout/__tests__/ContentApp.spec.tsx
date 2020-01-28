@@ -7,7 +7,7 @@ describe('ContentApp Component', () => {
 
     };
     it('should render ContentApp Component', () => {
-        const component = mount(<ContentApp {...props}/>);
+        const component = mount(<ContentApp {...props}><h1>Hi Test</h1></ContentApp>);
         expect(component).toMatchSnapshot();
     });
 

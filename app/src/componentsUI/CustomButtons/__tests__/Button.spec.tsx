@@ -15,7 +15,7 @@ describe('Button', () => {
       justIcon: true
   }
     it('should render Custom Buttom with specifics props', () => {
-        const component = mount(<Button {...props} />);
+        const component = mount(<Button {...props}><h1>Hi Test</h1></Button>);
 
         expect(component).toMatchSnapshot();
         expect((component).prop('color')).toEqual('warning');
