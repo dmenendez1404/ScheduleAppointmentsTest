@@ -64,7 +64,6 @@ export class Http {
                 return response;
             return response.data;
         }, function (error: any) {
-            console.log('REJECTED')
             dispatch(AppActions.setLoading(false));
             dispatch(AppActions.setNotifier({type: 'danger', open: true, message: 'Something went wrong!'}));
             return Promise.reject(error);
