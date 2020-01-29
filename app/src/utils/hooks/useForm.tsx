@@ -1,6 +1,7 @@
-import { useState, useEffect } from "react";
+import {useState, useEffect} from "react";
 
-const useForm = (callback = (evt) => { }) => {
+const useForm = (callback = (evt) => {
+}) => {
     const [inputs, setInputs] = useState({});
     const [valid, setValid] = useState(true);
 
@@ -13,18 +14,25 @@ const useForm = (callback = (evt) => { }) => {
         setValid(isValid);
     }, [inputs]);
 
-    const handleSubmit = (event:any) => {
+    const handleSubmit = (event: any) => {
         if (event) {
             event.preventDefault();
         }
         callback(event);
     }
 
-    const handleInputChange = (e, cb = ()=> {}) => {
+    const handleInputChange = (e, cb = () => {
+    }) => {
         if (e.event.target.id) {
-            setInputs(inputs => ({ ...inputs, [e.event.target.id]: e.control }));
+            setInputs(inputs => ({...inputs, [e.event.target.id]: e.control}));
         }
         cb();
+    }
+
+    const handleDirty = (e) => {
+        if (e.event.target.id) {
+            setInputs(inputs => ({...inputs, [e.event.target.id]: e.control}));
+        }
     }
 
     const setForm = (values) => {
@@ -33,8 +41,8 @@ const useForm = (callback = (evt) => { }) => {
 
     const addInput = (input) => {
         setInputs({...inputs, input});
-
     }
+
     const removeInput = (key) => {
         delete inputs[key];
         setInputs(inputs);
@@ -52,6 +60,7 @@ const useForm = (callback = (evt) => { }) => {
         setForm,
         addInput,
         removeInput,
+        handleDirty,
         replaceInput
     };
 }
