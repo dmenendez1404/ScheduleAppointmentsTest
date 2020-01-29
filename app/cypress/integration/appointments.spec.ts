@@ -8,8 +8,14 @@ describe('Widget E2E', () => {
         cy.wait('@loadAppointments').its('status').should('eq', 200);
     })
 
+    beforeEach(()=>{
+        for (let i = 0; i < 10; i++) {
+            cy.contains('Next').click();
+        }
+    })
+
     it('create an Appointment', () => {
-        cy.get('.rbc-events-container').eq(0).click();
+        cy.get('.rbc-events-container').eq(1).click();
         cy.get('#title').focus().type('Cypress Test Appointment');
         cy.get('#clothing').click();
         cy.get('.MuiMenu-list li').eq(0).click();
