@@ -37,7 +37,7 @@ jobs:
     - cd ../functions/
     - npm i
     - npm run deploy
-    if: branch = master
+    if: branch = master && type = push
   - stage: release
       after_success:
       - npm run semantic-release
