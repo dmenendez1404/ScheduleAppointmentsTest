@@ -22,13 +22,6 @@ export const _isEmpty = (control:any) => {
     return control;
 }
 
-export const _isEmail = (control:any) => {
-    if(!Validator.isEmail(control.value)) {
-        control.error = true;
-        control.mensaje = VALIDATOR_MESSAGES.Email_wrong_format;
-    }
-    return control;
-}
 export const _isRequired = (control:any) => {
     if(control.value === null || control.value === undefined || control.value === '') {
         control.error = true;

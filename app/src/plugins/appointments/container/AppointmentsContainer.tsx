@@ -5,6 +5,8 @@ import CustomCalendar from "../../../componentsUI/Calendar/Calendar";
 import swal from 'sweetalert2';
 import withReactContent from 'sweetalert2-react-content';
 import {AppointmentsFormModal} from "../index";
+import moment from "moment";
+import {AppActions} from "../../../store/actions";
 
 const SwalWithReactContent = withReactContent(swal);
 
@@ -40,40 +42,87 @@ const AppointmentsContainer = (props) => {
     }
 
     const onSave = (data) => {
-        if (!data._id){
-            delete data._id
-            addAppointment(data)
+        if (validateDate(data.start, data.end)) {
+            if (!data._id) {
+                delete data._id
+                addAppointment(data)
+            }
+            else
+                updateAppointment(data)
         }
-        else
-            updateAppointment(data)
     }
 
     const onRemove = (id) => {
         deleteAppointment(id)
     }
 
+    const validateDate = (start, end) => {
+        const startDay = moment(start).isoWeekday();
+        const endDay = moment(end).isoWeekday();
+        const wekendDays = [6, 7];
+
+        const startHour = moment(start, 'HH:mm:ss')
+        const endHour = moment(end, 'HH:mm:ss')
+        const startHourLimit = moment(start, 'HH:mm:ss').set({
+            hour: 7,
+            minute: 59,
+            second: 59
+        })
+        const endHourLimit = moment(end, 'HH:mm:ss').set({
+            hour: 17,
+            minute: 0,
+            second: 1
+        })
+
+        if (wekendDays.indexOf(startDay) !== -1 || wekendDays.indexOf(endDay) !== -1) {
+            dispatch(AppActions.setNotifier({
+                type: 'danger',
+                open: true,
+                message: `You can't schedule an appointment on weekends!`
+            }));
+            return false;
+        }
+
+        if (!startHour.isBetween(startHourLimit, endHourLimit) || !endHour.isBetween(startHourLimit, endHourLimit)) {
+            dispatch(AppActions.setNotifier({
+                type: 'danger',
+                open: true,
+                message: `The available schedule is from 8:00 am to 5:00 pm!`
+            }));
+            return false;
+        }
+        return true;
+    }
+
     const onEventResize = ({event, start, end}) => {
-        const evtIndex = events.indexOf(event);
-        events[evtIndex].start = start;
-        events[evtIndex].date = start;
-        events[evtIndex].end = end;
-        updateAppointment(events[evtIndex]);
+        if (validateDate(start, end)) {
+            const evtIndex = events.indexOf(event);
+            events[evtIndex].start = start;
+            events[evtIndex].date = start;
+            events[evtIndex].end = end;
+            updateAppointment(events[evtIndex]);
+        }
     };
 
     const onEventDrop = ({event, start, end, allDay}) => {
-        const evtIndex = events.indexOf(event);
-        events[evtIndex].start = start;
-        events[evtIndex].date = start;
-        events[evtIndex].end = end;
-        updateAppointment(events[evtIndex]);
-    };
+        if (validateDate(start, end)) {
+            const evtIndex = events.indexOf(event);
+            events[evtIndex].start = start;
+            events[evtIndex].date = start;
+            events[evtIndex].end = end;
+            updateAppointment(events[evtIndex]);
+        }
+    }
+
 
     const onSelectEvent = (evtprops) => {
         openModal(evtprops);
     };
 
     const onSelectSlot = (evtprops) => {
-        openModal(evtprops);
+        if (validateDate(evtprops.start, evtprops.end)) {
+            openModal(evtprops);
+        }
     };
 
     useEffect(() => {

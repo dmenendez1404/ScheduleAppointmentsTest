@@ -53,7 +53,7 @@ describe('CustomInput', () => {
             type: 'text',
             variant: 'outlined',
             onChange: jest.fn(),
-            control: {value: '', error: true, validators: [_isRequired],}
+            control: {value: '', error: true, dirty: true, validators: [_isRequired],}
         }
 
         const component = mount(<CustomInput {...props}/>);

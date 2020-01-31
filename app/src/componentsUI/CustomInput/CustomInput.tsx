@@ -7,7 +7,7 @@ import {FormHelperText, TextField} from "@material-ui/core";
 // core components
 import customInputStyle from "../../assets/jss/material-dashboard-react/components/customInputStyle";
 import {isValidControl} from "../../utils/FieldValidators";
-import {handleControlChange, getEmptyControl} from "../../utils/index";
+import {handleControlChange, getEmptyControl, handleControlDirty} from "../../utils/index";
 
 /*.MuiInputLabel-outlined .MuiInputLabel-outlined*/
 
@@ -34,12 +34,14 @@ const CustomInput = ({...props}) => {
             <TextField
                 id={id}
                 type={type}
-                value={control.value}
+                value={control.value || ''}
                 variant={variant}
                 label={labelText}
+                autoComplete='off'
                 onChange={(e) => handleControlChange(e, control, onChange)}
+                onBlur={(e) => handleControlDirty(e, control, onChange)}
             />
-            {control.error ? (
+            {control.error && control.dirty ? (
                 <FormHelperText id="component-error-text">{control.mensaje}</FormHelperText>
             ) : null}
         </FormControl>

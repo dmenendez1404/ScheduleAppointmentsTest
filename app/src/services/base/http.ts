@@ -57,7 +57,7 @@ export class Http {
             if (response.data.statusCode >= 200 && response.data.statusCode < 300) {
                 if (!!response.data.message)
                     dispatch(AppActions.setNotifier({type: 'success', open: true, message: response.data.message}))
-            } else if(!!response.data.data){
+            } else if(!!response.data.message){
                 dispatch(AppActions.setNotifier({type: 'danger', open: true, message: response.data.message}))
             }
             if(!response.data.data)

@@ -9,7 +9,7 @@ describe('HeaderApp Component', () => {
     it('should render HeaderApp Component', () => {
         const component = mount(
             <Provider store={Store}>
-                <HeaderApp {...props}/>
+                <HeaderApp {...props}><h1>Hi Test</h1></HeaderApp>
             </Provider>);
         expect(component).toMatchSnapshot();
     });

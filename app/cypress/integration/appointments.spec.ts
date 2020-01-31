@@ -8,8 +8,14 @@ describe('Widget E2E', () => {
         cy.wait('@loadAppointments').its('status').should('eq', 200);
     })
 
+    beforeEach(()=>{
+        for (let i = 0; i < 10; i++) {
+            cy.contains('Next').click();
+        }
+    })
+
     it('create an Appointment', () => {
-        cy.get('.rbc-events-container').eq(0).click();
+        cy.get('.rbc-events-container').eq(1).click();
         cy.get('#title').focus().type('Cypress Test Appointment');
         cy.get('#clothing').click();
         cy.get('.MuiMenu-list li').eq(0).click();
@@ -18,6 +24,8 @@ describe('Widget E2E', () => {
         cy.route({method: 'POST', url: `${apiUrl}`}).as('createAppointment');
         cy.contains('Save').click();
         cy.wait('@createAppointment').its('status').should('eq', 200);
+        //waiting for the notification is closed
+        cy.wait(3000);
     })
 
      it('update an Appointment', () => {
@@ -30,6 +38,8 @@ describe('Widget E2E', () => {
          cy.route({method: 'PATCH', url: `${apiUrl}**`}).as('updateAppointment');
          cy.contains('Save').click();
          cy.wait('@updateAppointment').its('status').should('eq', 200);
+         //waiting for the notification is closed
+         cy.wait(3000);
      })
 
     it('delete an Appointment', () => {
@@ -38,6 +48,8 @@ describe('Widget E2E', () => {
         cy.route({method: 'DELETE', url: `${apiUrl}**`}).as('deleteAppointment');
         cy.contains('Delete').click();
         cy.wait('@deleteAppointment').its('status').should('eq', 200);
+        //waiting for the notification is closed
+        cy.wait(3000);
     })
 
 })

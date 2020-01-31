@@ -20,16 +20,16 @@ const AppointmentFormModal = (props) => {
 
     const loadEmptyForm = useCallback(function EmptyForm() {
         return {
-            _id:{value: props.event._id || null, error: false, validators: []},
-            title: {value: props.event.title || '', error: false, validators: [_isRequired]},
-            description: {value: props.event.description || '', error: false, validators: []},
-            date: {value: moment(props.event.start), error: false, validators: [_isRequired]},
-            clothing: {value: props.event.clothing || '', error: false, validators: [_isRequired]},
-            color: {value: props.event.color || '#265985', error: false, validators: [_isRequired]},
-            start: {value: moment(props.event.start), error: false, validators: [_isRequired]},
-            end: {value:  moment(props.event.end), error: false, validators: [_isRequired]},
-            createdAt: {value: props.event.createdAt || moment(), error: false, validators: []},
-            updatedAt: {value:  moment(), error: false, validators: []},
+            _id:{value: props.event._id || null, error: false, dirty: false, validators: []},
+            title: {value: props.event.title || '', error: false, dirty: false, validators: [_isRequired]},
+            description: {value: props.event.description || '', error: false, dirty: false, validators: []},
+            date: {value: moment(props.event.start), error: false, dirty: false, validators: [_isRequired]},
+            clothing: {value: props.event.clothing || '', error: false, dirty: false, validators: [_isRequired]},
+            color: {value: props.event.color || '#265985', error: false, dirty: false, validators: [_isRequired]},
+            start: {value: moment(props.event.start), error: false, dirty: false, validators: [_isRequired]},
+            end: {value:  moment(props.event.end), error: false, dirty: false, validators: [_isRequired]},
+            createdAt: {value: props.event.createdAt || moment(), error: false, dirty: false, validators: []},
+            updatedAt: {value:  moment(), error: false, dirty: false, validators: []},
         };
     },[props]);
 

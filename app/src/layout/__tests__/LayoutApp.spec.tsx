@@ -17,7 +17,7 @@ describe('LoadingApp Component', () => {
         component = mount(
             <Provider store={Store}>
                 <Router>
-                    <LayoutApp {...props} />
+                    <LayoutApp {...props}><h1>Hi Test</h1></LayoutApp>
                 </Router>
             </Provider>
         );

@@ -22,7 +22,7 @@ export class AppointmentsDao {
         } catch (err) {
             return FormatResponse(400, err.message);
         } finally {
-            client.close();
+            //client.close();
         }
     }
 
@@ -37,9 +37,9 @@ export class AppointmentsDao {
             const db = client.db("schedule_appointments");
             return await db.collection('appointment').findOne({_id: new ObjectID(id)}).then((docs: any) => docs)
         } catch (err) {
-            return FormatResponse(400, err.message);
+            return FormatResponse(400,null, err.message);
         } finally {
-            client.close();
+           // client.close();
         }
     }
 
@@ -63,9 +63,9 @@ export class AppointmentsDao {
             });
             return response
         } catch (err) {
-            return err
+            return FormatResponse(400,null, err.message);
         } finally {
-            client.close();
+            //client.close();
         }
     }
 
@@ -89,9 +89,9 @@ export class AppointmentsDao {
             });
             return response
         } catch (err) {
-            return FormatResponse(400, err.message);
+            return FormatResponse(400,null, err.message);
         } finally {
-            client.close();
+           // client.close();
         }
     }
 
@@ -114,9 +114,9 @@ export class AppointmentsDao {
             });
             return response
         } catch (err) {
-            return FormatResponse(400, err.message);
+            return FormatResponse(400,null, err.message);
         } finally {
-            client.close();
+           // client.close();
         }
     }
 

@@ -12,6 +12,7 @@ import MomentUtils from '@date-io/moment';
 import customInputStyle from "../../assets/jss/material-dashboard-react/components/customInputStyle";
 import {isValidControl} from "../../utils/FieldValidators";
 import {handleControlChange, getEmptyControl} from "../../utils/index";
+import moment  from "moment";
 
 /*.MuiInputLabel-outlined .MuiInputLabel-outlined*/
 
@@ -40,7 +41,7 @@ const CustomDatePicker = ({...props}) => {
                 id={id}
                 label={labelText}
                 format={'DD/MM/YYYY'}
-                value={control.value}
+                value={control.value || moment()}
                 inputVariant={variant}
                 onChange={(e) => handleControlChange({target:{value: e, id: id}}, control, onChange)}
                 KeyboardButtonProps={{
